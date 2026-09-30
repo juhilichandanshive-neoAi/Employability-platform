@@ -1,0 +1,5 @@
+/model.pkl
+/best_salary_model.pkl
+/best_salary_model_cv.pkl
+/best_salary_model_zero_outliers_cv.pkl
+/final_salary_model.pkl

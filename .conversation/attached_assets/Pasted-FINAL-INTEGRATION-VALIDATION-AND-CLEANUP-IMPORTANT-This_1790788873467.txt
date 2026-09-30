@@ -1,0 +1,367 @@
+FINAL INTEGRATION VALIDATION AND CLEANUP
+
+IMPORTANT:
+This project has already undergone the main frontend ↔ backend integration.
+
+DO NOT START OVER.
+DO NOT REDESIGN.
+DO NOT REWRITE THE ARCHITECTURE.
+DO NOT REMOVE WORKING SERVICES.
+DO NOT CHANGE THE EXISTING ML/DVC PIPELINE.
+DO NOT CONVERT STREAMLIT TO REACT.
+
+The current project already contains:
+
+- session-backed empty student profile
+- assessment service integration
+- employability scoring
+- industry/job dataset integration
+- skill-gap calculation
+- career matching
+- certification recommendations
+- learning roadmap
+- session analytics
+- real PDF report generation
+- protected existing salary ML pipeline
+
+Your job now is FINAL VALIDATION, BUG FIXING, CLEANUP, AND DOCUMENTATION.
+
+==================================================
+1. RUN THE REAL END-TO-END STREAMLIT TEST
+==================================================
+
+Use Streamlit AppTest or the actual Streamlit runtime.
+
+Test the complete flow:
+
+Landing
+→ Login
+→ Dashboard
+→ Profile
+→ Save Profile
+→ Assessment
+→ Select domain
+→ Select difficulty
+→ Answer questions
+→ Submit assessment
+→ Employability Score
+→ Skill Gap
+→ Career Suggestions
+→ Certifications
+→ Learning Roadmap
+→ Analytics
+→ Reports
+→ Generate PDF
+
+Do not stop after the Assessment screen.
+
+Verify every transition actually works.
+
+Record:
+- screen reached
+- service called
+- result produced
+- exceptions
+- session state preserved
+
+==================================================
+2. VERIFY THE DATA FLOW
+==================================================
+
+Confirm this exact flow:
+
+Profile
+→ st.session_state.profile
+→ assessment result
+→ employability score
+→ skill gap
+→ career matching
+→ certifications
+→ roadmap
+→ analytics
+→ report
+
+There must be ONE session-backed source of truth.
+
+Do not reintroduce dummy student data.
+
+==================================================
+3. VERIFY DUMMY DATA DEPENDENCIES
+==================================================
+
+Search the complete active frontend for:
+
+from data.dummy_data import
+dummy_data
+
+Identify every remaining usage.
+
+IMPORTANT:
+
+Do NOT delete dummy_data.py blindly.
+
+The assessment question bank and static UI configuration may legitimately remain.
+
+However, old business/output data must NOT be used by the active application.
+
+The active app currently uses:
+
+profile_session.py
+roadmap_session.py
+
+Verify that old:
+
+profile.py
+roadmap.py
+
+are not being imported by the running application.
+
+If they are genuinely dead and contain obsolete business logic, either:
+- leave them untouched and document them as legacy, OR
+- remove them only if completely safe.
+
+Do not break imports.
+
+==================================================
+4. VERIFY EMPLOYABILITY SCORE
+==================================================
+
+Confirm the Score screen uses:
+
+calculate_score(profile, assessment)
+
+and not the old static SCORE values.
+
+Verify the result displayed in the UI matches the service result.
+
+Use the existing:
+
+config/employability_weights.json
+
+Do not invent new weights.
+
+==================================================
+5. VERIFY SKILL GAP
+==================================================
+
+Confirm the skill-gap calculation uses:
+
+student proficiency 0–5
+versus
+industry requirements 1–10
+
+and does not incorrectly pass student proficiency directly into the salary model.
+
+Test at least one supported target role.
+
+==================================================
+6. VERIFY CAREER MATCHING
+==================================================
+
+Confirm career recommendations are calculated from the bundled 260-row industry/job dataset.
+
+Do not claim:
+- live job openings
+- live market data
+- live salary data
+
+Dataset snapshot must remain clearly labeled.
+
+==================================================
+7. VERIFY CERTIFICATIONS AND ROADMAP
+==================================================
+
+Confirm certification recommendations use actual measured skill gaps.
+
+Confirm roadmap tasks use:
+- skill gaps
+- assessment weaknesses
+- certification recommendations
+
+No random or fabricated values.
+
+==================================================
+8. VERIFY ANALYTICS
+==================================================
+
+There must be no fabricated historical performance.
+
+If there is only one current-session assessment:
+show current-session information.
+
+If there is no historical data:
+show an appropriate empty state.
+
+==================================================
+9. VERIFY PDF REPORT
+==================================================
+
+Actually click/execute report generation.
+
+Confirm:
+- PDF bytes are generated
+- filename is generated
+- download object exists
+- report contains current-session information
+- no fake historical information is inserted
+- salary prediction is not included because the model artifact is unavailable
+
+==================================================
+10. SALARY MODEL — DO NOT FABRICATE
+==================================================
+
+Check whether:
+
+platform/backend/NeoAI1stPipeline/models/final_salary_model.pkl
+
+exists.
+
+If it exists through a genuine DVC restore:
+- restore it
+- verify it
+- load it using the existing prediction function
+- run one real prediction
+
+If it does not exist:
+DO NOT create a replacement.
+DO NOT retrain.
+DO NOT fabricate output.
+
+Keep salary prediction explicitly unavailable and document it as the only major backend artifact limitation.
+
+==================================================
+11. DEPENDENCY CHECK
+==================================================
+
+The report generator imports ReportLab.
+
+Ensure the actual documented installation requirements include ReportLab.
+
+Do not unnecessarily modify backend ML dependencies.
+
+Verify:
+- Streamlit
+- Plotly
+- Pandas
+- ReportLab
+
+are available through the correct project dependency configuration.
+
+==================================================
+12. UPDATE STALE DOCUMENTATION
+==================================================
+
+Update:
+
+platform/frontend/phase8_frontend/README.md
+
+The README currently incorrectly says the application is entirely static and has no backend integration.
+
+Update it to describe the actual current architecture:
+
+- Streamlit frontend
+- session-backed profile
+- assessment service
+- employability scoring
+- skill-gap analysis
+- industry/job snapshot
+- career matching
+- certification recommendations
+- roadmap
+- analytics
+- PDF reports
+- salary model status
+
+Clearly document that the approved salary model artifact is unavailable if it cannot be restored.
+
+Do not claim live jobs or live salary prediction.
+
+==================================================
+13. UI PROTECTION
+==================================================
+
+Do not change:
+- colors
+- theme
+- typography
+- layout
+- navigation design
+- charts
+- cards
+- visual styling
+
+Only fix functional/runtime issues.
+
+==================================================
+14. ML/DVC PROTECTION
+==================================================
+
+Do not modify the protected ML pipeline.
+
+Do not modify:
+- XGBoost configuration
+- preprocessing
+- feature engineering
+- training logic
+- cross-validation
+- DVC pipeline
+- MLflow setup
+- prediction contract
+
+unless a truly unavoidable integration error is discovered.
+
+==================================================
+15. FINAL REGRESSION TEST
+==================================================
+
+After all fixes:
+
+1. compile all Python files
+2. run backend service smoke tests
+3. run Streamlit AppTest
+4. run full end-to-end flow
+5. generate one real PDF report
+6. verify salary-model unavailable handling
+7. check Git diff
+8. check protected-file status
+9. check for accidental UI changes
+
+==================================================
+16. FINAL REPORT
+==================================================
+
+Return a table:
+
+| Feature | Status | Evidence |
+|---|---|---|
+| Profile | | |
+| Assessment | | |
+| Employability Score | | |
+| Skill Gap | | |
+| Career Suggestions | | |
+| Certifications | | |
+| Roadmap | | |
+| Analytics | | |
+| Reports/PDF | | |
+| Salary Prediction | | |
+
+Then report:
+
+- full end-to-end test result
+- number of runtime errors
+- remaining dummy-data dependencies
+- salary model artifact status
+- PDF generation status
+- dependencies added
+- README updated
+- ML/DVC files changed: YES/NO
+- UI redesign: YES/NO
+- final Git diff
+- exact remaining limitations
+
+IMPORTANT:
+Do not say "fully complete" unless the actual end-to-end runtime flow has been tested successfully.
+
+Do not fabricate test results.
+Do not fabricate the salary model.
+Fix only genuine remaining issues.

@@ -1,0 +1,274 @@
+schema: '2.0'
+stages:
+  preprocess:
+    cmd: python -m src.neoai.pipelines.preprocess_pipeline
+    deps:
+    - path: data/raw/Merged_industry_jobs_industry_jobs.csv
+      hash: md5
+      md5: c67a3fa33b921a6c4c8a6aa0d5529525
+      size: 47475
+    - path: src/neoai/data/ingestion.py
+      hash: md5
+      md5: d7e79ec302cbec52cce76d08cc7006b0
+      size: 498
+    - path: src/neoai/data/preprocessing.py
+      hash: md5
+      md5: c400c2e920b3418a5bde3ef3e9053d9f
+      size: 1447
+    - path: src/neoai/features/build_features.py
+      hash: md5
+      md5: 29a6439e325e96db5dfe9d6ef40b4ae3
+      size: 7431
+    - path: src/neoai/pipelines/preprocess_pipeline.py
+      hash: md5
+      md5: 18426905c9aeab1d9af308bb54bcf862
+      size: 884
+    outs:
+    - path: data/processed/Cleaned_Merged_Industry_Jobs.csv
+      hash: md5
+      md5: e842c809c407d2dbc594a88302bfea0b
+      size: 40939
+  train:
+    cmd: python -m src.neoai.models.train_salary
+    deps:
+    - path: data/processed/Cleaned_Merged_Industry_Jobs.csv
+      hash: md5
+      md5: e842c809c407d2dbc594a88302bfea0b
+      size: 40939
+    - path: src/neoai/models/train_salary.py
+      hash: md5
+      md5: da92430c3d8a51310435a6b7f96a37f3
+      size: 7343
+    params:
+      params.yaml:
+        models.random_forest:
+          n_estimators: 200
+          max_depth: 10
+          random_state: 42
+          n_jobs: -1
+        models.xgboost:
+          n_estimators: 200
+          max_depth: 6
+          learning_rate: 0.05
+          subsample: 0.8
+          colsample_bytree: 0.8
+          objective: reg:squarederror
+          random_state: 42
+          n_jobs: -1
+    outs:
+    - path: models/best_salary_model.pkl
+      hash: md5
+      md5: f869312da7cc481367b0770eadb3b6bc
+      size: 10748
+    - path: reports/evaluation/model_comparison.csv
+      hash: md5
+      md5: 923c52cccd9252a4269e6ab4a2ba2ceb
+      size: 387
+  cross_validate:
+    cmd: python -m src.neoai.models.cross_val_score
+    deps:
+    - path: data/processed/Cleaned_Merged_Industry_Jobs.csv
+      hash: md5
+      md5: e842c809c407d2dbc594a88302bfea0b
+      size: 40939
+    - path: src/neoai/features/build_features.py
+      hash: md5
+      md5: 29a6439e325e96db5dfe9d6ef40b4ae3
+      size: 7431
+    - path: src/neoai/models/cross_val_score.py
+      hash: md5
+      md5: bd2c154204eeaad114db55be2eab3c4d
+      size: 12249
+    - path: src/neoai/models/transformers.py
+      hash: md5
+      md5: b2f71b1405074dbbef27aca862ff8203
+      size: 2446
+    params:
+      params.yaml:
+        cross_validation:
+          n_splits: 5
+          shuffle: true
+          random_state: 42
+        models.random_forest:
+          n_estimators: 200
+          max_depth: 10
+          random_state: 42
+          n_jobs: -1
+        models.xgboost:
+          n_estimators: 200
+          max_depth: 6
+          learning_rate: 0.05
+          subsample: 0.8
+          colsample_bytree: 0.8
+          objective: reg:squarederror
+          random_state: 42
+          n_jobs: -1
+    outs:
+    - path: models/best_salary_model_cv.pkl
+      hash: md5
+      md5: ca204c9437bcb5965b411115afea3c0c
+      size: 28942
+    - path: reports/evaluation/cross_validation_results.csv
+      hash: md5
+      md5: 3764ceacc76629de153d06703355693b
+      size: 1864
+  remove_salary_outliers:
+    cmd: python -m src.neoai.data.remove_salary_outliers
+    deps:
+    - path: data/processed/Cleaned_Merged_Industry_Jobs.csv
+      hash: md5
+      md5: e842c809c407d2dbc594a88302bfea0b
+      size: 40939
+    - path: src/neoai/data/remove_salary_outliers.py
+      hash: md5
+      md5: 001217fe934776e8f135651a476b5ef1
+      size: 3797
+    outs:
+    - path: data/processed/Cleaned_Merged_Industry_Jobs_Zero_Outliers.csv
+      hash: md5
+      md5: eed39bfc3388a01de81c922ffc0fedb2
+      size: 38768
+  cross_validate_zero_outliers:
+    cmd: python -m src.neoai.models.cross_val_score_zero_outliers
+    deps:
+    - path: data/processed/Cleaned_Merged_Industry_Jobs_Zero_Outliers.csv
+      hash: md5
+      md5: eed39bfc3388a01de81c922ffc0fedb2
+      size: 38768
+    - path: src/neoai/features/build_features.py
+      hash: md5
+      md5: 29a6439e325e96db5dfe9d6ef40b4ae3
+      size: 7431
+    - path: src/neoai/models/cross_val_score_zero_outliers.py
+      hash: md5
+      md5: 1d2fe311aed314f04e170a4d6da33b4e
+      size: 15571
+    - path: src/neoai/models/transformers.py
+      hash: md5
+      md5: b2f71b1405074dbbef27aca862ff8203
+      size: 2446
+    params:
+      params.yaml:
+        cross_validation:
+          n_splits: 5
+          shuffle: true
+          random_state: 42
+        models.random_forest:
+          n_estimators: 200
+          max_depth: 10
+          random_state: 42
+          n_jobs: -1
+        models.xgboost:
+          n_estimators: 200
+          max_depth: 6
+          learning_rate: 0.05
+          subsample: 0.8
+          colsample_bytree: 0.8
+          objective: reg:squarederror
+          random_state: 42
+          n_jobs: -1
+    outs:
+    - path: models/best_salary_model_zero_outliers_cv.pkl
+      hash: md5
+      md5: 9e7983f1c8d5c55ace49023e032616ba
+      size: 522829
+    - path: reports/evaluation/cross_validation_results_zero_outliers.csv
+      hash: md5
+      md5: c6892dfb101571034dd6b709387b5a8d
+      size: 1878
+  compare_validation_results:
+    cmd: python -m src.neoai.models.compare_validation_results
+    deps:
+    - path: reports/evaluation/cross_validation_results.csv
+      hash: md5
+      md5: 3764ceacc76629de153d06703355693b
+      size: 1864
+    - path: reports/evaluation/cross_validation_results_zero_outliers.csv
+      hash: md5
+      md5: c6892dfb101571034dd6b709387b5a8d
+      size: 1878
+    - path: src/neoai/models/compare_validation_results.py
+      hash: md5
+      md5: de883b7c1762b1b42220e8410441e80f
+      size: 6264
+    outs:
+    - path: reports/evaluation/combined_cross_validation_results.csv
+      hash: md5
+      md5: 7f59e0aa0c0305c4c36893f43d31f001
+      size: 3699
+  save_final_model:
+    cmd: python -m src.neoai.models.save_final_model
+    deps:
+    - path: models/best_salary_model_zero_outliers_cv.pkl
+      hash: md5
+      md5: 9e7983f1c8d5c55ace49023e032616ba
+      size: 522829
+    - path: src/neoai/models/save_final_model.py
+      hash: md5
+      md5: a4c943f3700e2ba0e6a0e306bd5e08c9
+      size: 2650
+    outs:
+    - path: models/final_salary_model.pkl
+      hash: md5
+      md5: 9e7983f1c8d5c55ace49023e032616ba
+      size: 522829
+  visualize_validation_results:
+    cmd: python -m src.neoai.models.visualize_validation_results
+    deps:
+    - path: reports/evaluation/combined_cross_validation_results.csv
+      hash: md5
+      md5: 7f59e0aa0c0305c4c36893f43d31f001
+      size: 3699
+    - path: src/neoai/models/visualize_validation_results.py
+      hash: md5
+      md5: aeffddbc9228b4dedc7e9c1dad09ff33
+      size: 3951
+    outs:
+    - path: reports/visualizations/best_model_comparison.png
+      hash: md5
+      md5: cea5d17bf782f3cb8d5956f04f99ff69
+      size: 85434
+    - path: reports/visualizations/fold_r2_comparison.png
+      hash: md5
+      md5: 299754216cc9db954ade3f77f4d87437
+      size: 608872
+    - path: reports/visualizations/mean_r2_comparison.png
+      hash: md5
+      md5: fc5c756b0263d9f42fe5513bf8d9d7a8
+      size: 188516
+  train_zero_outliers:
+    cmd: python -m src.neoai.models.train_salary_zero_outliers
+    deps:
+    - path: data/processed/Cleaned_Merged_Industry_Jobs_Zero_Outliers.csv
+      hash: md5
+      md5: eed39bfc3388a01de81c922ffc0fedb2
+      size: 38768
+    - path: src/neoai/models/train_salary_zero_outliers.py
+      hash: md5
+      md5: c038ccf4f19a43b3c703dc17decc5256
+      size: 7542
+    params:
+      params.yaml:
+        models.random_forest:
+          n_estimators: 200
+          max_depth: 10
+          random_state: 42
+          n_jobs: -1
+        models.xgboost:
+          n_estimators: 200
+          max_depth: 6
+          learning_rate: 0.05
+          subsample: 0.8
+          colsample_bytree: 0.8
+          objective: reg:squarederror
+          random_state: 42
+          n_jobs: -1
+    outs:
+    - path: models/best_salary_model_zero_outliers.pkl
+      hash: md5
+      md5: afc5c4e46909fc069b63fa71422f676f
+      size: 510561
+    - path: reports/evaluation/model_comparison_zero_outliers.csv
+      hash: md5
+      md5: e11d9f581f33bc1ccbcfd4ed68c4d7a5
+      size: 380

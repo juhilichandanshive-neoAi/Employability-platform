@@ -1,0 +1,1 @@
+- [DVC site cache](dvc-site-cache.md) — Set `DVC_SITE_CACHE_DIR` to a writable path; the default `/var/tmp/dvc` can be read-only.

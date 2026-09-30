@@ -1,0 +1,14 @@
+<svg viewBox="0 0 160 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A star surrounded by confetti, celebrating a score improvement">
+  <g>
+    <path d="M80 30 L88 52 L112 52 L92 66 L100 88 L80 74 L60 88 L68 66 L48 52 L72 52Z" fill="#7C3AED"/>
+  </g>
+  <rect x="20" y="30" width="8" height="8" rx="2" fill="#EC4899" transform="rotate(18 24 34)"/>
+  <rect x="132" y="24" width="8" height="8" rx="2" fill="#06B6D4" transform="rotate(-12 136 28)"/>
+  <circle cx="30" cy="80" r="5" fill="#14B8A6"/>
+  <circle cx="128" cy="86" r="5" fill="#A78BFA"/>
+  <rect x="40" y="104" width="7" height="7" rx="2" fill="#06B6D4" transform="rotate(30 43 107)"/>
+  <rect x="110" y="108" width="7" height="7" rx="2" fill="#EC4899" transform="rotate(-20 113 111)"/>
+  <circle cx="80" cy="112" r="4" fill="#7C3AED"/>
+  <circle cx="18" cy="55" r="3" fill="#06B6D4"/>
+  <circle cx="142" cy="60" r="3" fill="#EC4899"/>
+</svg>

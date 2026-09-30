@@ -1,0 +1,411 @@
+NeoAI Salary Prediction Pipeline — Session Info
+================================================
+Updated   : 28-Sep-2026
+Branch    : main
+Remote    : https://dagshub.com/siddheshRajendraNimbalkar/NeoAI1stPipeline
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. LATEST COMMIT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Commit  : 6492f92
+Message : repro: full pipeline run, update README with real metrics,
+          fix skops trusted types, pin mlflow==3.16.1
+
+Link    : https://dagshub.com/siddheshRajendraNimbalkar/NeoAI1stPipeline/commit/6492f92
+Branch  : https://dagshub.com/siddheshRajendraNimbalkar/NeoAI1stPipeline/src/branch/main
+
+Recent commit history:
+  6492f92  repro: full pipeline run, update README with real metrics, fix skops trusted types, pin mlflow==3.16.1
+  02ea5ab  fix: separate baseline/final training flows, add params.yaml DVC deps, pin xgboost==3.4.1
+  6eaed78  fix: unify experience encoding, correct skill input scale, document IQR pre-CV methodology
+  1c6e75a  docs: add info.docs with commit info, files changed, validation results, DVC status, model verification, prediction output
+  725493d  refactor: integration-ready predict_salary, R2 model selection, pin scipy/sklearn, ignore mlruns and pycache
+  9daaf49  Experience and missing-value handling
+  80f5431  Preprocessing and validation consistency
+  9aa819b  Updating README File
+  04820fa  Finalize NeoAI ML pipeline and documentation
+  fae6076  Move zero-outlier model tracking to DVC
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2. FILES CHANGED (across all post-info.docs commits)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+─────────────────────────────────────────────────────────────────────────────
+commit 6eaed78 — fix: unify experience encoding, correct skill input scale,
+                 document IQR pre-CV methodology
+─────────────────────────────────────────────────────────────────────────────
+  src/neoai/features/build_features.py
+    - Complete rewrite as single source of truth for all feature engineering
+    - normalize_experience() covers all 14 actual dataset values:
+        Fresher, 0-1, 0-2, 0-3, 02 Years, 03 Years,
+        Fresher  1 Year, Fresher2 Years, Fresher  3 Years, etc.
+    - Canonical labels: Fresher/Entry Level(0), 0-1 Years(1), 0-2 Years(2),
+                        0-3 Years(3), Fresher-Mixed(3), Unknown(-1)
+    - Added SKILL_INPUT_SCALE constant documenting 1-10 integer scale
+    - CompanyFrequencyEncoder and SkillScaler moved here from cross_val scripts
+    - add_static_features() is the single entry point for all pipeline stages
+
+  src/neoai/models/cross_val_score_zero_outliers.py
+    - Removed ~120 lines of local feature engineering functions
+    - Now imports add_static_features, normalize_experience,
+      EXPERIENCE_ENCODING, group_role from build_features
+
+  src/neoai/models/cross_val_score.py
+    - Removed local FinalFeatureSelector, group_role, normalize_experience,
+      add_static_features definitions
+    - Now imports from build_features
+
+  src/neoai/models/predict_salary.py
+    - Updated import to use add_static_features from build_features
+    - Smoke test skill values corrected to realistic 1-10 scale
+      (Python=7, Linux=8, AWS=7, Docker=7, Communication=8, etc.)
+    - Docstring documents accepted Experience strings and 1-10 skill scale
+
+  src/neoai/data/remove_salary_outliers.py
+    - Added detailed methodology note to docstring explaining pre-CV IQR
+      trade-off, impact (<1% bound shift), and future fix path (TransformerMixin)
+
+─────────────────────────────────────────────────────────────────────────────
+commit 02ea5ab — fix: separate baseline/final training flows,
+                 add params.yaml DVC deps, pin xgboost==3.4.1
+─────────────────────────────────────────────────────────────────────────────
+  src/neoai/models/train_salary.py
+    - Added header block clearly marking this as BASELINE training
+    - Documents that final model path goes through cross_val_score.py
+    - Baseline uses 7 raw numeric features (no pipeline transformers)
+
+  src/neoai/models/train_salary_zero_outliers.py
+    - Same baseline header block added
+
+  dvc.yaml
+    - Added params: sections to all 4 stages that read params.yaml:
+        train, cross_validate, train_zero_outliers, cross_validate_zero_outliers
+    - Added build_features.py and transformers.py as deps to both CV stages
+    - DVC now detects param changes and marks affected stages as stale
+
+  requirements.txt
+    - Pinned xgboost==3.4.1 (was unpinned)
+
+─────────────────────────────────────────────────────────────────────────────
+commit 6492f92 — repro: full pipeline run, update README with real metrics,
+                 fix skops trusted types, pin mlflow==3.16.1
+─────────────────────────────────────────────────────────────────────────────
+  src/neoai/models/train_salary.py
+    - Fixed mlflow.sklearn.log_model to use unified skops_trusted_types
+      for all models (added sklearn.tree._tree.Tree)
+    - Previously only XGBRegressor had skops_trusted_types; RandomForest
+      was crashing with UntrustedTypesFoundException
+
+  src/neoai/models/train_salary_zero_outliers.py
+    - Same skops_trusted_types fix
+
+  src/neoai/models/cross_val_score.py
+    - Fixed FinalFeatureSelector() call — was missing required
+      feature_columns argument (now passes FINAL_FEATURES list)
+    - Now consistent with cross_val_score_zero_outliers.py
+
+  dvc.lock
+    - Updated with hashes from full --force pipeline run
+
+  requirements.txt
+    - Pinned mlflow==3.16.1 (was unpinned)
+
+  README.md
+    - Full update with real numbers from pipeline run (see section 5)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+3. VALIDATION RESULTS  (from dvc repro --force, commit 6492f92)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Selection criterion: Mean R² (highest wins). MAE and RMSE recorded for reference only.
+
+─────────────────────────────────────────────────────────────────────────────
+3a. Baseline Train/Test Split — Original Dataset  (7 features, 80/20 split)
+    reports/evaluation/model_comparison.csv
+─────────────────────────────────────────────────────────────────────────────
+  Model                   MAE       RMSE      R²
+  ─────────────────────── ───────── ───────── ──────────
+  SVR                     1.3071    1.8628    -0.0597    ← best R²
+  RandomForestRegressor   1.8506    2.4691    -0.8617
+  LinearRegression        2.0463    2.4748    -0.8703
+  XGBRegressor            1.9935    2.6674    -1.1727
+
+  Best model saved: models/best_salary_model.pkl  (SVR — baseline only, not used for final)
+
+─────────────────────────────────────────────────────────────────────────────
+3b. Baseline Train/Test Split — Zero-Outlier Dataset  (7 features, 80/20 split)
+    reports/evaluation/model_comparison_zero_outliers.csv
+─────────────────────────────────────────────────────────────────────────────
+  Model                   MAE       RMSE      R²
+  ─────────────────────── ───────── ───────── ──────────
+  RandomForest            1.5206    1.8857     0.1554    ← best R²
+  XGBRegressor            1.5281    1.8863     0.1549
+  LinearRegression        1.5111    1.9001     0.1425
+  SVR                     1.6221    2.1037    -0.0511
+
+  Best model saved: models/best_salary_model_zero_outliers.pkl  (RandomForest — baseline only)
+
+─────────────────────────────────────────────────────────────────────────────
+3c. 5-Fold CV Pipeline — Original Dataset  (18 features, fold-safe pipeline)
+    reports/evaluation/cross_validation_results.csv
+─────────────────────────────────────────────────────────────────────────────
+  Model                   Mean MAE  Mean RMSE  Mean R²   Std R²
+  ─────────────────────── ───────── ────────── ───────── ──────────
+  SVR                     1.5448    2.7257      0.1963    0.6771    ← best R²
+  XGBRegressor            1.2229    2.4960     -0.0472    1.5536
+  RandomForest            1.4485    2.5870     -0.0715    1.5171
+  LinearRegression        2.6288    3.6312     -0.2331    0.7629
+
+  Best model saved: models/best_salary_model_cv.pkl  (SVR)
+
+─────────────────────────────────────────────────────────────────────────────
+3d. 5-Fold CV Pipeline — Zero-Outlier Dataset  (18 features, fold-safe pipeline)
+    reports/evaluation/cross_validation_results_zero_outliers.csv
+─────────────────────────────────────────────────────────────────────────────
+  Model                   Mean MAE  Mean RMSE  Mean R²   Std R²
+  ─────────────────────── ───────── ────────── ───────── ──────────
+  XGBRegressor            0.8311    1.3641      0.5651    0.0864    ← best R² ✓ SELECTED
+  RandomForest            0.9432    1.4172      0.5337    0.0672
+  SVR                     0.9744    1.6762      0.3285    0.2160
+  LinearRegression        1.4621    1.9168      0.1318    0.2469
+
+  Per-fold breakdown (XGBRegressor):
+    Fold    MAE      RMSE     R²
+    ─────   ──────   ──────   ──────
+    1       0.8394   1.3587   0.5616
+    2       0.7657   1.2643   0.6242
+    3       0.7714   1.2358   0.6940
+    4       1.0382   1.6142   0.4637
+    5       0.7411   1.3476   0.4819
+
+  Best model saved: models/best_salary_model_zero_outliers_cv.pkl  (XGBRegressor)
+
+─────────────────────────────────────────────────────────────────────────────
+3e. Combined Cross-Validation — All Models, All Datasets
+    reports/evaluation/combined_cross_validation_results.csv
+─────────────────────────────────────────────────────────────────────────────
+  Rank  Dataset                Model             Mean MAE  Mean RMSE  Mean R²   Std R²
+  ────  ─────────────────────  ────────────────  ────────  ─────────  ───────   ──────
+     1  Zero Outliers Dataset  XGBRegressor      0.8311    1.3641     0.5651    0.0864
+     2  Zero Outliers Dataset  RandomForest      0.9432    1.4172     0.5337    0.0672
+     3  Zero Outliers Dataset  SVR               0.9744    1.6762     0.3285    0.2160
+     4  Original Dataset       SVR               1.5448    2.7257     0.1963    0.6771
+     5  Zero Outliers Dataset  LinearRegression  1.4621    1.9168     0.1318    0.2469
+     6  Original Dataset       XGBRegressor      1.2229    2.4960    -0.0472    1.5536
+     7  Original Dataset       RandomForest      1.4485    2.5870    -0.0715    1.5171
+     8  Original Dataset       LinearRegression  2.6288    3.6312    -0.2331    0.7629
+
+  Final selected model: XGBRegressor on Zero-Outlier Dataset (Rank 1, Mean R² = 0.5651)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+4. DVC PIPELINE STATUS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Last run : dvc repro --force  (commit 6492f92, 28-Sep-2026)
+Status   : All 9 stages completed successfully. Exit code 0.
+
+Pipeline stages (dvc.yaml):
+
+  Stage                        Command
+  ───────────────────────────  ──────────────────────────────────────────────────────────
+  preprocess                   python -m src.neoai.pipelines.preprocess_pipeline
+  train                        python -m src.neoai.models.train_salary
+  cross_validate               python -m src.neoai.models.cross_val_score
+  remove_salary_outliers       python -m src.neoai.data.remove_salary_outliers
+  train_zero_outliers          python -m src.neoai.models.train_salary_zero_outliers
+  cross_validate_zero_outliers python -m src.neoai.models.cross_val_score_zero_outliers
+  compare_validation_results   python -m src.neoai.models.compare_validation_results
+  visualize_validation_results python -m src.neoai.models.visualize_validation_results
+  save_final_model             python -m src.neoai.models.save_final_model
+
+params.yaml tracked as DVC params dependency in:
+  train, cross_validate, train_zero_outliers, cross_validate_zero_outliers
+
+Additional source deps tracked in CV stages:
+  src/neoai/features/build_features.py
+  src/neoai/models/transformers.py
+
+Stage outputs tracked by DVC:
+  data/processed/Cleaned_Merged_Industry_Jobs.csv
+  data/processed/Cleaned_Merged_Industry_Jobs_Zero_Outliers.csv
+  models/best_salary_model.pkl
+  models/best_salary_model_cv.pkl
+  models/best_salary_model_zero_outliers.pkl
+  models/best_salary_model_zero_outliers_cv.pkl
+  models/final_salary_model.pkl
+  reports/evaluation/model_comparison.csv
+  reports/evaluation/model_comparison_zero_outliers.csv
+  reports/evaluation/cross_validation_results.csv
+  reports/evaluation/cross_validation_results_zero_outliers.csv
+  reports/evaluation/combined_cross_validation_results.csv
+  reports/visualizations/mean_r2_comparison.png
+  reports/visualizations/fold_r2_comparison.png
+  reports/visualizations/best_model_comparison.png
+
+Preprocessing output:
+  Raw shape:       (260, 16)
+  After cleaning:  (164, 17)
+  Final shape:     (164, 27)
+
+Outlier removal output:
+  Q1:           3.3750 LPA
+  Q3:           6.3625 LPA
+  IQR:          2.9875 LPA
+  Lower Bound: -1.1062 LPA
+  Upper Bound: 10.8438 LPA
+  Rows before: 164
+  Rows removed:  9
+  Rows after:  155
+
+Issues encountered and resolved during dvc repro --force:
+  1. mlflow not installed → pip install mlflow==3.16.1
+  2. MLflow DB schema out of date → python -m mlflow db upgrade sqlite:///mlflow.db
+  3. mlflow.sklearn.log_model crashing on RandomForest/SVR/LinearRegression
+     with UntrustedTypesFoundException (sklearn.tree._tree.Tree not in
+     skops_trusted_types) → fixed in train_salary.py and train_salary_zero_outliers.py
+  4. cross_val_score.py calling FinalFeatureSelector() with no args →
+     fixed to pass feature_columns=FINAL_FEATURES
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+5. FINAL MODEL VERIFICATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Source model : models/best_salary_model_zero_outliers_cv.pkl
+Final model  : models/final_salary_model.pkl
+Match        : True (source and final are byte-for-byte identical via shutil.copy2)
+
+Pipeline type : sklearn.pipeline.Pipeline
+
+Steps:
+  1. company_frequency   CompanyFrequencyEncoder
+       column          : Company
+       frequency_map_  : learned from 155-row zero-outlier training set
+
+  2. skill_scaler        SkillScaler
+       columns         : PythonRequired, LinuxRequired, NetworkingRequired,
+                         AWSRequired, AzureRequired, DockerRequired,
+                         KubernetesRequired, TerraformRequired,
+                         CyberSecurityRequired, CommunicationRequired
+       input scale     : 1-10 integers (1 = low requirement, 10 = high)
+       scaler mean     : [5.9806, 7.8000, 7.1806, 6.3613, 5.5677,
+                          6.0065, 5.9355, 5.0903, 4.3935, 7.3742]
+       scaler scale    : [2.1326, 1.4828, 1.2206, 3.1375, 3.0901,
+                          2.9697, 3.1473, 2.9279, 2.7696, 0.9446]
+
+  3. feature_selector    FinalFeatureSelector
+       feature count   : 18
+       feature order   :
+          1.  Role_Group_Cloud Engineer
+          2.  Role_Group_DevOps Engineer
+          3.  Role_Group_Network Engineer
+          4.  Role_Group_Other
+          5.  Role_Group_Security/SOC Analyst
+          6.  Role_Group_Site Reliability Engineer
+          7.  Experience_Encoded
+          8.  Company_Freq
+          9.  PythonRequired_scaled
+         10.  LinuxRequired_scaled
+         11.  NetworkingRequired_scaled
+         12.  AWSRequired_scaled
+         13.  AzureRequired_scaled
+         14.  DockerRequired_scaled
+         15.  KubernetesRequired_scaled
+         16.  TerraformRequired_scaled
+         17.  CyberSecurityRequired_scaled
+         18.  CommunicationRequired_scaled
+
+  4. model               XGBRegressor
+       n_features_in_  : 18
+       n_estimators    : 200
+       max_depth       : 6
+       learning_rate   : 0.05
+       subsample       : 0.8
+       colsample_bytree: 0.8
+       objective       : reg:squarederror
+       random_state    : 42
+       n_jobs          : -1
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+6. PREDICTION TEST OUTPUT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Command: python -m src.neoai.models.predict_salary
+
+Input:
+  Company              : Infosys
+  Role                 : DevOps Engineer
+  Experience           : Fresher
+  PythonRequired       : 7
+  LinuxRequired        : 8
+  NetworkingRequired   : 5
+  AWSRequired          : 7
+  AzureRequired        : 4
+  DockerRequired       : 7
+  KubernetesRequired   : 6
+  TerraformRequired    : 5
+  CyberSecurityRequired: 3
+  CommunicationRequired: 8
+
+Output:
+  Predicted salary: 4.97 LPA
+
+Exit status: 0  (no errors)
+
+Note: Previous prediction (4.77 LPA) used incorrect 0/1 binary skill values.
+      Corrected to 1-10 scale matching training data distribution.
+
+Integration interface:
+  from src.neoai.models.predict_salary import predict_salary
+  salary = predict_salary({ ... })   # accepts dict or single-row DataFrame
+  # returns float (LPA)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+7. PINNED DEPENDENCIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Package          Version   Reason pinned
+  ───────────────  ────────  ──────────────────────────────────────────────────
+  scikit-learn     1.5.2     Final model serialised with this version;
+                             loading with a different version can silently
+                             change predictions
+  xgboost          3.4.1     Final model serialised with this version
+  scipy            1.13.1    scipy>=1.14 DLL (_matching.pyd) blocked by
+                             Windows Application Control policy
+  mlflow           3.16.1    Installed version; pinned for reproducibility
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+8. KEY INSIGHTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  - Actual dataset Experience values are all entry-level variants (Fresher,
+    0-1, 0-2, 0-3 and typo variants). There are NO 1-2 Years, 2-4 Years,
+    3-5 Years, 5-8 Years, 8+ Years values. The old encoding was entirely wrong.
+
+  - Skill columns in training data are 1-10 integers (min=1, max=10,
+    mean ~5-8). Using 0/1 binary values at prediction time produces z-scores
+    below the training distribution minimum.
+
+  - IQR outlier removal is applied to the full dataset before CV folds are
+    created. This is a known methodology trade-off documented in
+    remove_salary_outliers.py. Impact is small (<1% bound shift per fold).
+
+  - Baseline train scripts (train_salary.py, train_salary_zero_outliers.py)
+    use only 7 features (role group dummies + Experience_Encoded). The final
+    model CV pipeline uses 18 features. These are intentionally different flows.
+    The baseline models are NOT used for final prediction.
+
+  - final_salary_model.pkl is a byte-for-byte copy of
+    best_salary_model_zero_outliers_cv.pkl, generated by save_final_model.py
+    via shutil.copy2.
+
+  - Remote: https://dagshub.com/siddheshRajendraNimbalkar/NeoAI1stPipeline.git
+    Branch: main
