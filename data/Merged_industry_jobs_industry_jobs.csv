@@ -1,0 +1,261 @@
+Job_ID,Link of the Job ,Company,Role,Experience,PythonRequired,LinuxRequired,NetworkingRequired,AWSRequired,AzureRequired,DockerRequired,KubernetesRequired,TerraformRequired,CyberSecurityRequired,CommunicationRequired,SalaryLPA
+1,https://cloudsoftsol.com/jobs/fresher-cloud-devops-engineer-gravitix-tech-hyderabad-june-2026/,Capgemini,Cloud Security Engineer,Fresher,5,9,8,9,6,7,9,5,8,8,9.61
+2,https://cloudsoftsol.com/jobs/sre-devops-fresher-multi-city-mumbai-noida-june-2026/,HCL,Cloud Engineer,Fresher,7,10,8,7,9,9,5,7,7,8,5.42
+3,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-ahmedabad-bhubaneswar-june-2026/,Wipro,Cloud Engineer,Fresher,6,7,8,8,5,6,6,5,7,8,9.26
+4,https://cloudsoftsol.com/jobs/analytical-brains-education-aws-devops-engineer-fresher-hyderabad-2026/,Accenture,SOC Analyst,Fresher,9,8,9,9,5,6,7,7,6,6,9.07
+5,https://cloudsoftsol.com/jobs/zyphra-tech-cloud-devops-engineer-fresher-hyderabad-2026/,Infosys,Cloud Security Engineer,Fresher,6,6,6,8,8,8,10,9,9,6,8.58
+6,https://in.indeed.com/viewjob?jk=3c4fd98b44009b86,Kognito Kube Private Limited,DevOps Engineer,Fresher,8,9,8,8,7,9,9,8,7,8,NA
+7,https://vertoz.zohorecruit.in/jobs/Careers/40218000041605076/Intern---Devops-Engineer---Vertoz,Vertoz,DevOps Engineer,Fresher,3,10,8,8,2,5,2,1,3,8,NA
+8,https://in.indeed.com/viewjob?jk=af6342e7b35f24eb,Aapstech,Cybersecurity Analyst,Fresher,7,6,9,2,1,2,1,1,10,8,2.90 – 5.80
+9,https://www.naukri.com/job-listings-trainee-ai-cloud-engineer-quantiphi-analytics-solutions-private-limited-mumbai-suburban-0-to-2-years-250326501060,Quantiphi Analytics Solutions Private Limited,Trainee AI Cloud Engineer,Fresher,8,7,6,8,6,6,5,3,2,8,NA
+10,https://www.tcsion.com/jobs/Anzen-Technologies-Pvt-Ltd/Cyber-Security-Analyst--Fresher-21103/,Anzen Technologies Pvt. Ltd.,Cyber Security Analyst,Fresher,4,6,8,2,1,1,1,1,10,8,3.0-3.5
+11,https://in.jooble.org/desc/-904810229809804875,Rejuvent Greentech,SOC Analyst,Fresher,3,6,8,1,1,1,1,1,10,8,3
+12,https://www.linkedin.com/jobs/view/junior-cloud-cyber-security-engineer-at-unisys-4375109048,Unisys,Junior Cloud Cyber Security Engineer,Fresher,6,8,8,8,6,6,5,4,10,8,NA 
+13,https://cloudsoftsol.com/jobs/fresher-cloud-devops-engineer-gravitix-tech-hyderabad-june-2026/,Gravitix Tech,Cloud DevOps Engineer,Fresher,7,9,7,9,8,8,8,7,3,8,4.0-7.0
+14,https://cloudsoftsol.com/jobs/sre-devops-fresher-multi-city-mumbai-noida-june-2026/,Capgemini / Wipro / Tech Mahindra,DevOps Fresher Trainee,Fresher,7,9,7,9,8,8,8,7,3,8,4.0-8.0
+15,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-ahmedabad-bhubaneswar-june-2026/,TCS / Adani Digital / Cognizant / Capgemini,DevOps Engineer & Site Reliability Engineer,Fresher,7,9,7,9,8,8,8,7,3,8,4.0-8.0
+16,https://cloudsoftsol.com/jobs/analytical-brains-education-aws-devops-engineer-fresher-hyderabad-2026/,Analytical Brains Education Pvt Ltd,AWS DevOps Engineer,Fresher,7,9,7,10,7,8,8,8,3,8,3.0-6.0
+17,https://cloudsoftsol.com/jobs/zyphra-tech-cloud-devops-engineer-fresher-hyderabad-2026/,Zyphra Tech,Cloud DevOps Engineer,Fresher,7,9,8,9,8,9,8,8,3,8,4.0-6.0
+18,https://www.linkedin.com/jobs/view/4384180075/,Signant Health,Cloud Operations Engineer,Fresher,4,8,8,2,10,3,6,2,3,10,NA 
+19,https://www.linkedin.com/jobs/view/4437959898/?alternateChannel=search&trackingId=...,EFICIYENT,Junior Security Analyst,Fresher,6,4,8,1,1,1,1,1,10,8,NA 
+20,https://www.naukri.com/job-listings-associate-consultant-grc-sequretek-it-solutions-mumbai-all-areas-0-to-2-years-290626017995,Sequretek IT Solutions,Associate Consultant - GRC,Fresher,1,2,5,1,1,1,1,1,9,8,1.0-4.0
+21,https://www.naukri.com/job-listings-trainee-ai-cloud-engineer-quantiphi-analytics-solutions-private-limited-mumbai-suburban-0-to-2-years-250326501060,Quantiphi Analytics Solutions,Trainee - AI Cloud Engineer,Fresher,9,5,5,8,7,4,3,2,2,8,NA 
+22,https://www.naukri.com/job-listings-cloud-partner-operations-presales-associate-freshers-ahmedabad-devangles-infotech-ahmedabad-0-to-1-years-070726503303,DevAngles Software,Cloud Partner Operations & Presales Associate,Fresher,2,2,5,1,1,1,1,1,2,10,NA 
+23,https://in.indeed.com/viewjob?jk=6ec3884beb0f2461,TechSpawn Solutions,AWS DevOps Engineer,Fresher,7,8,8,10,7,4,2,2,7,7,2.5-3.5
+24,https://in.indeed.com/viewjob?jk=0a92448bc27a16b7,Countless Services Private Limited,DevOps Engineer,Fresher,7,8,6,7,7,5,5,4,4,7,3.96–7.50
+25,https://in.indeed.com/viewjob?jk=42875d84f215e3f9,Frequent Research Fieldwork Solutions Pvt. Ltd.,DevOps Engineer,Fresher,2,9,8,7,1,9,2,1,7,7,2.4–4.0
+26,https://in.indeed.com/viewjob?jk=a352b0f59e502cf8,Axcess Tech Systems,Cloud Engineer,Fresher,8,7,7,9,1,1,1,1,4,7,3.25
+27,https://in.indeed.com/viewjob?jk=84180ef33fb4fe1f,Inkpen,Junior DevOps Engineer,0-2,2,9,9,8,7,8,6,5,7,8,1.8–3.0
+28,https://in.indeed.com/viewjob?jk=0ee5b55c81a45e76,EnactOn Technologies,DevOps Engineer,0-2,3,8,7,9,1,6,8,9,6,8,4
+29,https://in.indeed.com/viewjob?jk=df10a87c77f6cd4d,i2k2 Networks,AWS Cloud Engineer (L1),0–6 months,1,9,8,9,1,1,1,1,4,8,NA
+30,https://in.indeed.com/viewjob?jk=df10a87c77f6cd4d,Cloudseed Technologies,Cloud Engineering Track Graduate,Fresher,6,6,7,8,8,2,2,1,6,8,NA
+31,https://www.tcsion.com/jobs/PUMO-TECHNOVATION-INDIA-PRIVATE-LIMITED/Cyber-Security-Engineer-21558/,PUMO TECHNOVATION INDIA PRIVATE LIMITED,Cyber Security Engineer,Fresher,3,5,7,1,1,1,1,1,9,7,3.0–3.5
+32,https://www.tcsion.com/jobs/IOPEX-TECHNOLOGIES-PRIVATE-LIMITED/SOC-Security-Operations-Center-Trainee-21418/,IOPEX TECHNOLOGIES PRIVATE LIMITED,SOC (Security Operations Center) Trainee,0-1,2,6,8,1,1,1,1,1,9,8,2.5–3.0
+33,https://www.tcsion.com/jobs/GreatHire/Cyber-Security-Analyst--Freshers-21743/,GreatHire,Cyber Security Analyst,Fresher,6,7,8,1,1,1,1,1,10,8,3.0–6.0
+34,https://www.tcsion.com/jobs/Agent42-Labs-Pvt-Ltd/Entry-Level-Engineer-Cloud-21276/?utm_medium=job_search_catalogue&utm_source=iDLH_internal,Agent42 Labs Pvt Ltd,Entry Level Engineer (Cloud),0-2,6,7,8,7,5,2,2,1,2,8,3-4
+35,https://www.tcsion.com/jobs/Unicloud-Software-Solutions-Private-Limited/DevOps-Engineer-21889/?utm_medium=job_search_catalogue&utm_source=iDLH_internal,Unicloud Software Solutions Private Limited,DevOps Engineer,Fresher,5,8,8,8,5,7,8,6,3,8,3-4
+36,https://www.tcsion.com/jobs/ZakApps-Software-Pvt-Ltd/DevOps-Engineer-21428/?utm_medium=job_search_catalogue&utm_source=iDLH_internal,ZakApps Software Pvt Ltd,DevOps Engineer,Fresher,5,8,8,7,4,5,4,3,2,8,3.0-5.5
+37,https://in.indeed.com/viewjob?jk=5f68d2f9f9dc92fe,MHTECHIN Technologies,Junior Cloud & DevOps Engineer,0-1,6,8,5,8,6,7,6,1,2,7,NA
+38,https://www.foundit.in/job/devops-cloud-engineer-daai-infosys-bengaluru-bangalore-58440130,Infosys,DevOps / Cloud Engineer - DaAI,Fresher,5,8,6,9,8,9,9,9,3,7,NA
+39,https://www.foundit.in/job/cloud-engineer-ntt-data-north-america-bengaluru-bangalore-58440647,NTT DATA North America,Cloud Engineer,Fresher,1,5,9,8,8,1,1,1,7,8,NA
+40,https://www.naukri.com/job-listings-associate-devops-engineer-ai-cloud-operations-bacp-crew-mohali-0-to-3-years-120626011344?src=jobsearchDesk&sid=17837787839249077&xp=1&px=1&nignbevent_src=jobsearchDeskGNB,Bacp Crew,Associate DevOps Engineer,0-3,7,8,7,7,7,2,1,1,5,8,1.75–3
+41,https://www.naukri.com/job-listings-hybrid-cloud-administrator-ti-steps-hyderabad-chennai-bengaluru-0-to-2-years-151025019183,ti Steps,Hybrid Cloud Administrator,0-2,3,7,8,8,8,2,1,2,6,7,2–5
+42,https://www.linkedin.com/jobs/view/4437952942,Power Bridge,Cybersecurity L1 SOC Analyst,0-2,2,6,9,2,1,1,1,1,10,8,NA
+43,https://www.linkedin.com/jobs/view/4426965838,Talogy,Security Operations Center Analyst,0-2,2,6,8,1,1,1,1,1,10,9,NA
+44,https://www.linkedin.com/jobs/view/4330848231,Medpace,Information Security Engineer,0-2,5,4,8,1,7,1,1,1,10,9,NA
+45,https://www.linkedin.com/jobs/view/4439306966,Fortuna Cysec,Security Analyst I,0-2,2,5,8,1,1,1,1,1,10,8,NA
+46,https://www.linkedin.com/jobs/view/4427555232,Datavail,Associate Information Security and Compliance,0-2,2,3,6,2,2,1,1,1,10,9,NA
+47,https://www.linkedin.com/jobs/view/4407216690,MarketVector Indexes,Junior DevOps Engineer,Entry Level,6,8,6,5,8,5,4,3,4,9,NA
+48,https://www.linkedin.com/jobs/view/4414646848,Veradigm®,IT Cyber Defense Analyst,Entry Level,2,6,8,2,2,1,1,1,10,8,NA
+49,https://www.linkedin.com/jobs/view/4375356251,Value Point Systems Pvt Ltd,SOC Analyst,Entry Level,1,5,8,1,1,1,1,1,10,8,NA
+50,https://www.linkedin.com/jobs/view/4436526968,Noventiq India,Cloud Trainee Engineer,Fresher,2,4,6,1,9,1,1,1,2,8,NA
+51,https://www.linkedin.com/jobs/view/4435459842,Noventiq India,Security Analyst - L0,Fresher,2,5,7,1,7,1,1,1,10,8,NA
+52,https://www.linkedin.com/jobs/view/4425481444,Signant Health,Cloud Operations Engineer - Technology IT,Entry Level,2,7,6,1,9,2,4,1,2,9,NA
+53,https://www.linkedin.com/jobs/view/4427330449,UST,Junior Site Reliability Engineer,Entry Level,6,7,7,1,10,3,9,7,2,8,NA
+54,https://www.linkedin.com/jobs/view/4408001053,ECI,Security Operations Center Associate,0-1,2,6,10,1,1,1,1,1,10,9,NA
+55,https://www.linkedin.com/jobs/view/4408652629,Birlasoft,Engineer - Cybersecurity,Entry Level,2,6,9,1,1,1,1,1,10,8,NA
+56,https://www.linkedin.com/jobs/view/4298606084,SCG,Cybersecurity Officer,0-3,2,5,7,1,1,1,1,1,10,8,NA
+57,https://www.linkedin.com/jobs/view/4407392227,KubeRox Technologies,Associate Consultant / Consultant (Cloud & Kubernetes),Entry Level,4,8,7,4,4,7,10,1,2,8,NA
+58,https://www.linkedin.com/jobs/view/4433105180,Technoidentity,AI DevOps Engineer,0-3,10,6,5,7,7,9,9,7,3,8,NA
+59,https://www.linkedin.com/jobs/view/4409277565,NTT DATA North America,SOC Operator,Entry Level,3,6,8,6,7,2,2,1,10,8,NA 
+60,https://www.linkedin.com/jobs/view/4433322752,Accelleron,SOC Analyst,0-3,4,6,8,3,8,2,2,1,10,8,NA
+61,https://www.linkedin.com/jobs/view/4432218534,Searce Inc,Cloud Operations Engineer,0-1,7,8,8,7,6,2,2,3,7,8,NA
+62,https://www.linkedin.com/jobs/view/4432774719,Metasips Private Limited,Cloud Engineer,0-4,8,7,9,10,4,9,9,10,8,8,NA
+63,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-south-india-chennai-bangalore-kerala-june-2026/,Infosys,DevOps Engineer,0-1,7,9,8,8,8,8,7,7,3,8,4.50-9.0
+64,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-south-india-chennai-bangalore-kerala-june-2026/,Infosys,Site Reliability Engineer,0-1,7,9,9,8,8,8,8,7,3,8,4.50-9.0
+65,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-south-india-chennai-bangalore-kerala-june-2026/,Cognizant,DevOps Engineer,0-1,7,9,8,8,8,8,7,7,3,8,4.50-9.0
+66,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-south-india-chennai-bangalore-kerala-june-2026/,Cognizant,Site Reliability Engineer,0-1,7,9,9,8,8,8,8,7,3,8,4.50-9.0
+67,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-south-india-chennai-bangalore-kerala-june-2026/,UST,DevOps Engineer,0-1,7,9,8,8,8,8,7,7,3,8,4.50-9.0
+68,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-south-india-chennai-bangalore-kerala-june-2026/,UST,Site Reliability Engineer,0-1,7,9,9,8,8,8,8,7,3,8,4.50-9.0
+69,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-south-india-chennai-bangalore-kerala-june-2026/,Wipro,DevOps Engineer,0-1,7,9,8,8,8,8,7,7,3,8,4.50-9.0
+70,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-south-india-chennai-bangalore-kerala-june-2026/,Wipro,Site Reliability Engineer,0-1,7,9,9,8,8,8,8,7,3,8,4.50-9.0
+71,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-south-india-chennai-bangalore-kerala-june-2026/,Innovature Labs,DevOps Engineer,0-1,7,9,8,8,8,8,7,7,3,8,4.50-9.0
+72,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-south-india-chennai-bangalore-kerala-june-2026/,Innovature Labs,Site Reliability Engineer,0-1,7,9,9,8,8,8,8,7,3,8,4.50-9.0
+73,https://cloudsoftsol.com/jobs/graduate-site-reliability-engineer-flipkart-bengaluru-2026/,Flipkart,Site Reliability Engineer,0-1,8,10,9,2,1,8,10,8,3,8,18-28
+74,https://cloudsoftsol.com/jobs/associate-site-reliability-engineer-razorpay-bengaluru-2026/,Razorpay,Associate Site Reliability Engineer,0-2,8,10,9,9,1,8,10,9,3,8,14-22
+75,https://cloudsoftsol.com/jobs/google-cloud-engineer-university-graduate-google-india-2026/,Google India,Google Cloud – Customer Engineer,0-1,8,7,8,2,2,5,8,8,5,10,22-34
+76,https://cloudsoftsol.com/jobs/azure-graduate-engineer-microsoft-india-hyderabad-2026/,Microsoft India,Azure Graduate Engineer,0-1,8,6,9,1,10,5,9,4,6,10,18-28
+77,https://cloudsoftsol.com/jobs/aws-cloud-support-associate-graduate-amazon-bengaluru-2026/,Amazon Web Services,AWS Cloud Support Associate,0-1,8,10,10,10,1,3,2,2,4,10,8-14
+78,https://cloudsoftsol.com/jobs/tech-mahindra-istio-service-mesh-devops-fresher-hyderabad-june-2026/,Tech Mahindra,Istio Service Mesh DevOps Fresher Trainee,0-1,8,9,10,7,7,8,10,2,8,7,4.8-7.2
+79,https://cloudsoftsol.com/jobs/mindtree-argo-cd-helm-devops-fresher-internship-bengaluru-june-2026/,Mindtree,Argo CD + Helm DevOps Fresher Internship,0-1,7,9,6,7,7,9,10,9,5,7,1.32-2.40 
+80,https://cloudsoftsol.com/jobs/v-solutions-cloud-devops-intern-hyderabad-2026/,V Solutions Inc,Cloud & DevOps Intern,Fresher,8,9,7,8,8,9,9,9,6,8,NA
+81,https://cloudsoftsol.com/jobs/hexaware-crossplane-backstage-platform-engineer-fresher-chennai-june-2026/,Hexaware,Crossplane + Backstage Platform Engineer Fresher,Fresher,7,8,6,8,8,7,10,9,3,8,1.32-2.40
+82,https://cloudsoftsol.com/jobs/mphasis-opentelemetry-observability-sre-fresher-bengaluru-june-2026/,Mphasis,OpenTelemetry + Observability SRE Fresher,Fresher,8,9,8,5,4,6,8,3,5,8,5.4-8.0
+83,https://cloudsoftsol.com/jobs/sopra-steria-gitops-engineer-fresher-internship-noida-june-2026/,Sopra Steria,GitOps + Argo CD Engineer ,Fresher,6,8,6,7,7,8,10,8,6,8,1.20–2.16 
+84,https://cloudsoftsol.com/jobs/ltimindtree-multi-cloud-security-fresher-pune-june-2026/,LTIMindtree,Multi-Cloud Security Engineer,Fresher,8,8,8,9,9,7,7,8,10,8,1.44–2.40 
+85,https://cloudsoftsol.com/jobs/tcs-mlops-engineer-fresher-internship-chennai-june-2026/,TCS,MLOps Engineer,Fresher,10,8,5,9,8,8,9,7,2,8,1.20-2.40
+86,https://cloudsoftsol.com/jobs/ibm-finops-cloud-cost-fresher-internship-chennai-june-2026/,IBM,FinOps + Cloud Cost Optimisation,Fresher,6,3,2,9,8,1,2,1,2,9,1.20-2.40
+87,https://cloudsoftsol.com/jobs/infosys-platform-engineering-kubernetes-fresher-mysore-june-2026/,Infosys,Platform Engineering + Kubernetes,Fresher,8,8,5,8,1,7,10,8,2,8,"96,000–1.80"
+88,https://cloudsoftsol.com/jobs/wipro-aiops-sre-fresher-trainee-bengaluru-june-2026/,Wipro,AIOps + SRE,Fresher,9,9,6,7,1,2,2,1,5,9,4.80–7.00
+89,https://cloudsoftsol.com/jobs/hcltech-azure-devops-sre-fresher-trainee-noida-june-2026/,HCLTech,Azure DevOps Engineer,Fresher,8,8,6,1,10,8,9,3,3,8,4.5-8.0
+90,https://cloudsoftsol.com/jobs/capgemini-sre-devops-fresher-trainee-mumbai-noida-june-2026/,Capgemini,Site Reliability Engineer (SRE) & DevOps Fresher Trainee,0-1,9,9,8,9,9,8,9,9,4,9,4–8
+91,https://cloudsoftsol.com/jobs/accenture-gcp-devops-sre-internship-delhi-ncr-june-2026/,Accenture,Google Cloud (GCP) DevOps & SRE Internship,0-1,8,8,7,1,1,8,9,9,3,8,1.08–1.80
+92,https://cloudsoftsol.com/jobs/cognizant-multi-cloud-devops-fresher-internship-kolkata-june-2026/,Cognizant,Multi-Cloud (AWS + Azure + GCP) DevOps,0-1,8,8,7,8,8,8,9,9,3,8,0.84–1.56
+93,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-pune-vizag-coimbatore-june-2026/,Persistent / TCS / Cognizant / Robert Bosch / Zensar,DevOps Engineer / Site Reliability Engineer,0-1,8,9,8,8,8,8,8,7,3,8,4.00 – 8.50
+94,https://cloudsoftsol.com/jobs/multi-cloud-devops-fresher-trainee-zensar-bajaj-finserv-pune-june-2026/,Zensar Technologies,Multi-Cloud DevOps Fresher Trainee,0-1,8,8,7,7,7,8,7,8,5,8,4.50 – 8.00 
+95,https://cloudsoftsol.com/jobs/gcp-devops-sre-fresher-internship-cognizant-bosch-coimbatore-june-2026/,Cognizant,Google Cloud (GCP) DevOps & SRE Intern,0-1 ,7,8,6,1,1,8,8,7,2,8,0.84 – 1.56
+96,https://cloudsoftsol.com/jobs/gcp-devops-sre-fresher-internship-cognizant-bosch-coimbatore-june-2026/,Cognizant,GCP DevOps Engineer,0-1,7,8,6,1,1,8,8,7,2,8,0.84–1.56
+97,https://cloudsoftsol.com/jobs/gcp-devops-sre-fresher-internship-cognizant-bosch-coimbatore-june-2026/,Cognizant,Site Reliability Engineer,0-1,7,8,6,1,1,8,8,7,2,8,0.84–1.56
+98,https://cloudsoftsol.com/jobs/gcp-devops-sre-fresher-internship-cognizant-bosch-coimbatore-june-2026/,Robert Bosch Partners,GCP DevOps Engineer,0-1,7,8,6,1,1,8,8,7,2,8,0.84–1.56
+99,https://cloudsoftsol.com/jobs/gcp-devops-sre-fresher-internship-cognizant-bosch-coimbatore-june-2026/,Robert Bosch Partners,Site Reliability Engineer,0-1,7,8,6,1,1,8,8,7,2,8,0.84–1.56
+100,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-pune-vizag-coimbatore-june-2026/,Persistent ,DevOps Engineer,0-1,8,9,8,8,8,8,8,7,3,8,4.00 – 8.50
+101,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-pune-vizag-coimbatore-june-2026/,TCS,DevOps Engineer,0-1,8,9,8,8,8,8,8,7,3,8,4.00 – 8.50
+102,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-pune-vizag-coimbatore-june-2026/,Cognizant,DevOps Engineer,0-1,8,9,8,8,8,8,8,7,3,8,4.00 – 8.50
+103,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-pune-vizag-coimbatore-june-2026/,Robert Bosch Partners,DevOps Engineer,0-1,8,9,8,8,8,8,8,7,3,8,4.00 – 8.50
+104,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-pune-vizag-coimbatore-june-2026/,Zensar,DevOps Engineer,0-1,8,9,8,8,8,8,8,7,3,8,4.00 – 8.50
+105,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-pune-vizag-coimbatore-june-2026/,Persistent ,Site Reliability Engineer,0-1,8,9,8,8,8,8,8,7,3,8,4.00 – 8.50
+106,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-pune-vizag-coimbatore-june-2026/,TCS,Site Reliability Engineer,0-1,8,9,8,8,8,8,8,7,3,8,4.00 – 8.50
+107,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-pune-vizag-coimbatore-june-2026/,Robert Bosch Partners,Site Reliability Engineer,0-1,8,9,8,8,8,8,8,7,3,8,4.00 – 8.50
+108,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-pune-vizag-coimbatore-june-2026/,Zensar,Site Reliability Engineer,0-1,8,9,8,8,8,8,8,7,3,8,4.00 – 8.50
+109,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-pune-vizag-coimbatore-june-2026/,Cognizant,Site Reliability Engineer,0-1,8,9,8,8,8,8,8,7,3,8,4.00 – 8.50
+110,https://cloudsoftsol.com/jobs/azure-devops-engineer-sre-fresher-ahmedabad-tcs-adani-digital-june-2026/,TCS,Azure DevOps Engineer,0-1,5,8,6,1,9,6,8,2,2,8,4.20 – 7.50
+111,https://cloudsoftsol.com/jobs/azure-devops-engineer-sre-fresher-ahmedabad-tcs-adani-digital-june-2026/,Adani Digital Partners,Azure DevOps Engineer,0-1,5,8,6,1,9,6,8,2,2,8,4.20 – 7.50
+112,https://cloudsoftsol.com/jobs/azure-devops-engineer-sre-fresher-ahmedabad-tcs-adani-digital-june-2026/,TCS,Site Reliability Engineer,0-1,5,8,6,1,9,6,8,2,2,8,4.20 – 7.50
+113,https://cloudsoftsol.com/jobs/azure-devops-engineer-sre-fresher-ahmedabad-tcs-adani-digital-june-2026/,Adani Digital Partners,Site Reliability Engineer,0-1,5,8,6,1,9,6,8,2,2,8,4.20 – 7.50
+114,https://cloudsoftsol.com/jobs/aws-devops-internship-cognizant-itc-infotech-kolkata-june-2026/,ITC Infotech Partners,AWS DevOps Engineer,0-1,7,7,6,10,2,7,6,7,4,7,0.96–1.68
+115,https://cloudsoftsol.com/jobs/aws-devops-internship-cloud-soft-solutions-hyderabad-june-2026/,Cloud Soft Solutions,AWS DevOps Engineer,0-1,8,8,6,10,3,7,6,7,5,8,0.96–1.44
+116,https://cloudsoftsol.com/jobs/aws-devops-internship-persistent-atos-pune-june-2026/,Persistent Systems,AWS DevOps Engineer,0-1,8,8,6,10,3,8,7,8,5,8,1.08–1.92
+117,https://cloudsoftsol.com/jobs/aws-devops-internship-persistent-atos-pune-june-2026/,Atos Partners, AWS DevOps Engineer ,0-1,8,8,6,10,3,8,7,8,5,8,1.08–1.92
+118,https://cloudsoftsol.com/jobs/gcp-devops-sre-fresher-internship-infosys-bhubaneswar-june-2026/,Local Tech Parks,Google Cloud (GCP) DevOps & SRE,0-1,7,8,6,2,2,7,7,8,4,7,0.84–1.44
+119,https://cloudsoftsol.com/jobs/multi-cloud-devops-fresher-internship-tensorgo-pgsn-hyderabad-june-2026/,TensorGo Technologies,Multi-Cloud (AWS + Azure + GCP) DevOps / SRE,0-1,7,8,6,8,8,8,7,7,4,7,0.96–1.80
+120,https://cloudsoftsol.com/jobs/multi-cloud-devops-fresher-internship-tensorgo-pgsn-hyderabad-june-2026/,Pgsn Soft Tech,Multi-Cloud (AWS + Azure + GCP) DevOps / SRE,0-1,7,8,6,8,8,8,7,7,4,7,0.96–1.80
+121,https://cloudsoftsol.com/jobs/multi-cloud-devops-fresher-internship-ust-ibs-software-trivandrum-june-2026/,IBS Software,Multi-Cloud (AWS + Azure + GCP) DevOps Internship,0-1,7,8,6,8,8,8,7,8,4,7,0.90–1.56
+122,https://cloudsoftsol.com/jobs/shyena-tech-yarns-devops-intern-aws-gcp-azure-fresher-pune-2026/,Shyena Tech Yarns Pvt Ltd,DevOps,0-1,8,8,6,9,8,9,9,9,4,7,4.0-7.0
+123,https://cloudsoftsol.com/jobs/futops-technologies-python-aws-trainee-internship-fresher-pune-2026/,Futops Technologies India Pvt Ltd,Python + AWS Trainee,0-1,10,8,6,10,1,2,1,1,2,8,3-4
+124,https://cloudsoftsol.com/jobs/radical-technologies-cloud-devops-internship-fresher-pune-multicity-2026/,Radical Technologies,Cloud / DevOps,0-1,7,8,6,9,9,9,9,9,2,8,4-7
+125,https://cloudsoftsol.com/jobs/universal-printers-aws-devops-internship-fresher-cloud-pune-2026/,Universal Printers,AWS DevOps Engineer,0-1,7,8,6,10,1,8,1,1,2,8,4-6
+126,https://cloudsoftsol.com/jobs/roxiler-systems-aws-devops-engineer-internship-fresher-pune-2026/,Roxiler Systems,AWS DevOps Engineer,0-1,8,9,7,10,2,9,9,9,2,8,6-9
+127,https://cloudsoftsol.com/jobs/gcp-associate-cloud-engineer-searce-pune-2026/,Searce Inc,Associate Cloud Engineer – Google Cloud,0-2,8,6,8,1,1,2,9,9,2,9,6-10
+128,https://cloudsoftsol.com/jobs/azure-associate-trainee-accenture-bengaluru-2026/,Accenture India,Azure Cloud Associate – Trainee,0-1 ,5,6,9,1,10,2,2,8,3,9,4-6
+129,https://cloudsoftsol.com/jobs/associate-cloud-engineer-aws-track-tcs-fresher-2026/,Tata Consultancy Services (TCS),Associate Cloud Engineer – AWS Track,0-1 ,7,9,8,10,1,2,2,1,3,8,4-7
+130,https://cloudsoftsol.com/jobs/junior-devops-engineer-trainee-ibm-india/,IBM India,Junior DevOps Engineer / Trainee,0-1 ,6,8,7,8,2,7,8,8,8,8,4-7
+131,https://cloudsoftsol.com/jobs/entry-level-devops-engineer-comprinno-pune/,Comprinno Technologies,Entry-Level DevOps Engineer,0-1 ,8,9,7,9,7,9,10,10,6,8,3-6
+132,https://cloudsoftsol.com/jobs/devops-intern-techment-pan-india/,Techment,DevOps Intern (Pan-India),0-1 ,7,9,7,8,8,7,6,7,2,8,3-5
+133,https://www.linkedin.com/posts/komal-prajapati01_apply-interested-share-7481378094734389248-vrfY/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFzbsQYBc81s57VcJNsJTRfnE5hoOr8ujIA,Capgemini,Cloud Security Engineer,Fresher,5,9,8,9,6,7,9,5,8,8,9.61
+134,https://in.indeed.com/jobs?q=Cybersecurity+Analyst+Entry+Level&l=&from=searchOnDesktopSerp&vjk=af6342e7b35f24eb,HCL,Cloud Engineer,Fresher,7,10,8,7,9,9,5,7,7,8,5.42
+135,https://in.indeed.com/jobs?q=Cybersecurity+Analyst+Entry+Level&sc=0kf%3Aattr%287EQCZ%29%3B&from=searchOnDesktopSerp&start=10&vjk=07e689de2f8e4ea4,Wipro,Cloud Engineer,Fresher,6,7,8,8,5,6,6,5,7,8,9.26
+136,https://in.indeed.com/jobs?q=Cybersecurity+Analyst+Entry+Level&sc=0kf%3Aattr%287EQCZ%29%3B&from=searchOnDesktopSerp&start=20&vjk=6ccb10e7c78fa4c9,Accenture,SOC Analyst,Fresher,9,8,9,9,5,6,7,7,6,6,9.07
+137,https://in.indeed.com/jobs?q=Information+Security+Analyst+Fresher&l=&from=searchOnHP&vjk=006d11ad7e5fe3b0,Infosys,Cloud Security Engineer,Fresher,6,6,6,8,8,8,10,9,9,6,8.58
+138,https://www.linkedin.com/jobs/view/4407216690/,MarketVector Indexes,Junior DevOps Engineer,Entry level ,7,9,8,5,9,6,6,6,4,9, NA
+139,https://www.linkedin.com/jobs/view/4427487604/,Noventiq,Cloud Engineer,NA,3,6,8,10,1,1,1,1,1,1,NA
+140,https://www.linkedin.com/jobs/view/4409276608/,NTT DATA,Security Engineer (L1) ,Entry level ,1,3,8,1,1,1,1,1,10,9,NA
+141,https://in.indeed.com/jobs?q=Cloud+Engineer+Fresher&l=&sc=0kf%3Aattr%287EQCZ%29%3B&from=searchOnDesktopSerp&vjk=f26955f6c34bbad7,Deloitte,Associate Analyst | Cloud Infrastructure | Engineering | Hybrid Cloud Engineering,Fresher,1,2,3,1,1,1,1,1,1,9,NA
+142,https://in.indeed.com/jobs?q=Cloud+Engineer+Fresher&l=&sc=0kf%3Aattr%287EQCZ%29%3B&from=searchOnDesktopSerp&vjk=b093362583f7ed2d,SMARTHMS & Solutions Pvt Ltd,Junior Linux System Administrator,0-2 Years,1,10,8,4,4,1,1,1,8,5,5
+143,https://in.indeed.com/jobs?q=Cloud+Engineer+Fresher&l=&sc=0kf%3Aattr%287EQCZ%29%3B&from=searchOnDesktopSerp&vjk=0a92448bc27a16b7,Countless Services Private Limited,DevOps Engineer,Fresher,6,8,6,7,6,6,6,5,4,7,5.9
+144,https://in.indeed.com/viewjob?jk=b6ccf8281c02608e&tk=1jt6mba3chboj800&from=serp&vjs=3,Syslint Technologies,Linux Engineers,Fresher,1,10,3,1,1,1,1,1,2,8,NA
+145,https://in.indeed.com/jobs?q=Cloud+Engineer+Fresher&l=&sc=0kf%3Aattr%287EQCZ%29%3B&from=searchOnDesktopSerp&vjk=a352b0f59e502cf8,Axcess Tech Systems,Cloud Engineer,Fresher,8,6,6,9,1,1,1,1,2,7,3.25
+146,https://in.indeed.com/viewjob?cmp=Frequent-Research-Fieldwork-Solutions-Pvt.-Ltd.&t=Devops+Engineer&jk=42875d84f215e3f9&xpse=SoBl67I3hmn-H5TN0R0LbzkdCdPP&xfps=6c08ba59-6f09-41d9-bb30-a19aad8c8c1a&xkcb=SoD667M3hmnZ-cTDJp0DbzkdCdPP&vjs=3,Frequent Research Fieldwork Solutions Pvt. Ltd.,DevOps Engineer,Fresher,2,9,8,4,1,9,1,1,6,6,3.4
+147,https://in.indeed.com/jobs?q=Cloud+Engineer+Fresher&sc=0kf%3Aattr%287EQCZ%29%3B&from=searchOnDesktopSerp&start=10&vjk=50bb938304468e32,Bursys Infotech India Pvt Ltd,DevOps Engineer,Fresher,4,7,5,5,5,4,1,1,3,6,3.5
+148,https://www.linkedin.com/jobs/view/4438303354/,Neev,Network Security L1,Fresher / Internship Experience Preferred,1,4,10,1,1,1,1,1,10,8,0.5-4
+149,https://www.linkedin.com/jobs/view/4409292070/,"NTT DATA, Inc.",Security Managed Services Engineer (L1),Entry level ,4,5,8,1,1,1,1,1,10,8,NA
+150,https://www.linkedin.com/jobs/view/4413028765/,Olive Crypto Systems Pvt. Ltd.,ASE I (IT Operations L1),NA,7,10,7,1,1,1,1,1,7,7,NA
+151,https://www.linkedin.com/jobs/view/4330972248/,Medpace,SOC Analyst,Fresher,5,2,6,1,5,1,1,1,10,8,NA
+152,https://www.linkedin.com/jobs/view/4409281477/,"NTT DATA, Inc.",EDR Analyst - L1,Entry Level ,1,3,7,1,1,1,1,1,8,9,NA
+153,https://www.linkedin.com/jobs/view/4424701008/,1Kosmos,Support Engineer - Fresher,Fresher,1,2,7,1,1,1,1,1,8,9,NA
+154,https://in.indeed.com/viewjob?jk=f2a00107562c3f26&tk=1jt87t7h3hc5i800&from=serp&vjs=3,Ontash,Junior System Admin (DevOps),Fresher,1,10,8,8,8,9,1,1,5,5,NA
+155,https://www.linkedin.com/posts/anushkasingh-aviation_hiring-serviceengineer-linux-activity-7480598244712996864-rdaT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFzbsQYBc81s57VcJNsJTRfnE5hoOr8ujIA,Ally Wiredsoft Solutions,Service Engineer,Fresher – 3 Years,6,10,6,1,1,1,1,1,2,6,5.4
+156,https://www.linkedin.com/posts/anushkasingh-aviation_hiring-cybersecurity-cybersecurityjobs-activity-7480163712570511361-QIT_?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFzbsQYBc81s57VcJNsJTRfnE5hoOr8ujIA,AllyWired,Specialized Cyber Professional – Level 1,0–1 Year,5,7,9,1,1,1,1,1,10,8,NA
+157,https://www.linkedin.com/posts/anushkasingh-aviation_hiring-immediatejoiners-itjobs-activity-7475640898756726784-Fbo7?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFzbsQYBc81s57VcJNsJTRfnE5hoOr8ujIA,Ally Wiredsoft Solutions,Security Operations Analyst,0–3 Years,2,9,6,1,1,1,1,1,10,7,3.9
+158,https://www.linkedin.com/posts/anushkasingh-aviation_hiring-immediatejoiners-itjobs-activity-7475640898756726784-Fbo7?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFzbsQYBc81s57VcJNsJTRfnE5hoOr8ujIA,Ally Wiredsoft Solutions,Senior Technical Support Engineer – Cloud Support Desk,0–3 Years,1,7,7,8,8,2,2,1,4,8,3.3
+159,https://www.linkedin.com/posts/anushkasingh-aviation_hiring-immediatejoiners-itjobs-activity-7475640898756726784-Fbo7?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFzbsQYBc81s57VcJNsJTRfnE5hoOr8ujIA,Ally Wiredsoft Solutions,System Administrator,0–3 Years,1,8,8,5,5,1,1,1,5,6,3.9
+160,https://www.linkedin.com/posts/anushkasingh-aviation_hiring-immediatejoiners-itjobs-activity-7475640898756726784-Fbo7?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFzbsQYBc81s57VcJNsJTRfnE5hoOr8ujIA,Ally Wiredsoft Solutions,Backup Administrator,0–3 Years,1,6,5,3,3,1,1,1,4,5,4.8
+161,https://www.linkedin.com/posts/anushkasingh-aviation_cybersecurity-socanalyst-securityanalyst-activity-7474415172913266688-oR5y?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFzbsQYBc81s57VcJNsJTRfnE5hoOr8ujIA,Ally Wired soft Solutions,Cyber Security Analyst (L1),Fresher,1,7,9,1,1,1,1,1,10,7,7.2
+162,https://www.linkedin.com/posts/anushkasingh-aviation_hiring-networkengineer-serverengineer-activity-7474413043787984896--iQb?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFzbsQYBc81s57VcJNsJTRfnE5hoOr8ujIA,Ally Wired Soft Solutions,Network & Server Engineer (L1),Fresher,1,7,10,1,1,1,1,1,5,6,7.2
+163,https://www.linkedin.com/posts/anushkasingh-aviation_hiring-devsecops-fresherjobs-activity-7474412126917468160-cL3h?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFzbsQYBc81s57VcJNsJTRfnE5hoOr8ujIA,Ally Wired Soft Solutions,DevSecOps Engineer (L1),Fresher,5,8,5,2,1,8,6,1,8,6,7.2
+164,https://www.linkedin.com/posts/komal-prajapati01_apply-interested-share-7481378094734389248-vrfY/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFzbsQYBc81s57VcJNsJTRfnE5hoOr8ujIA,Infinite Computer Solutions,Associate SOC Analyst,Fresher,2,5,8,1,1,1,1,1,10,7,3.5
+165,https://in.indeed.com/jobs?q=Cybersecurity+Analyst+Entry+Level&l=&from=searchOnDesktopSerp&vjk=af6342e7b35f24eb,Aapstech,Cybersecurity Analyst (Entry-Level),Fresher,6,5,9,1,1,1,1,1,10,7,2.9-5.8
+166,https://in.indeed.com/jobs?q=Cybersecurity+Analyst+Entry+Level&sc=0kf%3Aattr%287EQCZ%29%3B&from=searchOnDesktopSerp&start=10&vjk=07e689de2f8e4ea4,SecPod,Security Research Engineer,Fresher,9,8,8,1,1,1,1,1,10,7,NA
+167,https://in.indeed.com/jobs?q=Cybersecurity+Analyst+Entry+Level&sc=0kf%3Aattr%287EQCZ%29%3B&from=searchOnDesktopSerp&start=20&vjk=6ccb10e7c78fa4c9,Altered Security,Security Engineer (L1) ,0–2 Years,2,4,6,1,1,1,1,1,10,7,NA
+168,https://in.indeed.com/jobs?q=Information+Security+Analyst+Fresher&l=&from=searchOnHP&vjk=006d11ad7e5fe3b0,Accveil Solutions Pvt. Ltd.,Cyber Security Analyst – SIEM (Security Information and Event Management),0–3 Years,2,6,8,2,4,1,1,1,10,7,3.0-5.4
+169,https://share.google/RraL2m1m81Y6IaELz,3infotechsolution,Cyber Security Associate,Fresher,9,2,9,1,1,1,1,1,10,7,5-9
+170,https://bebee.com/in/jobs/cyber-security-analyst-fresher-nettech-india-thane-district-maharashtra--t7xk-757495169,Nettech India,Cyber Security Analyst,Fresher,4,9,6,3,3,1,1,1,10,8,1.8–3.6
+171,https://www.naukri.com/job-listings-associate-soc-analyst-fresher-infinite-bengaluru-0-to-0-years-060726017883?src=jobsearchDesk&sid=17838673035055003&xp=3&px=1&nignbevent_src=jobsearchDeskGNB,Infinit,Associate SOC Analyst,Fresher,4,6,8,1,2,1,1,1,10,7,3.25–3.6
+172,https://www.naukri.com/job-listings-cyber-security-analyst-fresher-essen-vision-software-pvt-ltd-mumbai-0-to-2-years-140526503562?src=jobsearchDesk&sid=17838673035055003&xp=12&px=1&nignbevent_src=jobsearchDeskGNB,Essen Vision Software,Cyber Security Analyst,0-1 years,1,3,7,1,1,1,1,1,10,9,NA
+173,https://www.naukri.com/job-listings-cyber-security-expert-zucol-services-pune-0-to-1-years-080726011289?src=jobsearchDesk&sid=17838673035055003&xp=15&px=1&nignbevent_src=jobsearchDeskGNB,Zucol Services,Cyber Security Expert,0-1 years,2,4,8,2,1,1,1,1,10,7,1.25–2.0
+174,https://www.naukri.com/job-listings-associate-devops-engineer-ai-cloud-operations-bacp-crew-mohali-0-to-3-years-120626011344?src=simjobsjd_rt,Bacp Crew,Associate DevOps Engineer (AI & Cloud Operations),0-1 years,6,8,7,7,7,2,2,1,4,7,1.75–3.0
+175,https://www.naukri.com/job-listings-cyber-security-analyst-codinglimits-nellore-hyderabad-chennai-bengaluru-0-to-1-years-160626008057?src=jobsearchDesk&sid=17838673035055003_1&xp=14&px=2&nignbevent_src=jobsearchDeskGNB,Codinglimits Nellore,Cyber Security Analyst,0-1 years,2,6,7,1,1,1,1,1,9,7,NA
+176,https://www.naukri.com/job-listings-cyber-security-analyst-precise-testing-solution-noida-0-to-0-years-140526012101?src=jobsearchDesk&sid=17838713437532389&xp=1&px=1,Precise Testing Solution,Cyber Security Analyst,Fresher,1,7,5,1,1,1,1,1,10,4,NA
+177,https://www.naukri.com/job-listings-cloud-customer-engineer-techgyan-mumbai-0-to-2-years-010920500417?src=cluster&sid=17838715512085427_1&xp=1&px=1,Techgyan,Cloud Customer Engineer,0-2 years,1,2,4,1,8,1,1,1,2,9,NA
+178,https://www.naukri.com/job-listings-network-security-engineer-ti-steps-hyderabad-chennai-bengaluru-0-to-2-years-290825007602?src=simjobsjd_rt,NA,Network Security Engineer,Fresher,1,3,9,1,1,1,1,1,8,5,NA
+179,https://www.naukri.com/job-listings-soc-analyst-eze-castle-integration-bengaluru-0-to-2-years-090726031738?src=simjobsjd_bottom,Eze Castle Integration (ECI),SOC Analyst,0-2 years,1,5,9,1,1,1,1,1,10,8,NA
+180,https://www.naukri.com/job-listings-security-analyst-ibm-india-pvt-limited-bengaluru-0-to-1-years-100726914474?src=simjobsjd_rt,IBM,Security Analyst,0-1 years,2,5,8,1,1,1,1,1,10,8,NA
+181,https://www.naukri.com/job-listings-security-engineer-cashfree-payments-bengaluru-0-to-3-years-180626021655?src=cluster&sid=17838732990648004_1&xp=9&px=1,Cashfree Payments,Security Engineer ,Fresher,8,5,7,6,1,3,2,1,10,8,NA
+182,https://www.naukri.com/job-listings-security-analyst-l0-value-point-systems-bengaluru-0-to-1-years-180626506387?src=cluster&sid=17838732990648004_1&xp=11&px=1,ValuePoint,Security Analyst - L0,0–1 Years,1,6,6,1,4,1,1,1,10,8,NA
+183,https://www.naukri.com/job-listings-security-research-engineer-intelligence-feed-secpod-technologies-pvt-ltd-bengaluru-0-to-1-years-210426502761?src=cluster&sid=17838732990648004_1&xp=14&px=1,SecPod Technologies,Security Research Engineer – Intelligence Feed,0–1 Years,5,5,7,1,1,1,1,1,10,8,NA
+184,https://www.linkedin.com/jobs/view/4298392569/,SCG,Cloud Engineer – SCG India,0-3 years,5,7,7,9,9,4,3,2,6,7,NA
+185,https://in.indeed.com/jobs?q=Information+Security+Analyst+Fresher&l=&from=searchOnHP&vjk=006d11ad7e5fe3b0,Accveil Solutions Pvt. Ltd.,Cyber Security Analyst – SIEM (Security Information and Event Management),0–3 Years,2,7,9,3,4,1,1,1,10,7,3.0-5.4
+186,https://www.naukri.com/job-listings-devops-engineer-fresher-unthinkable-solutions-gurugram-0-to-1-years-240626010759?src=cluster&sid=17838778382483797_1&xp=4&px=1,Unthinkable Solutions,DevOps Engineer - Fresher,0–1 Years,6,9,6,9,5,10,10,8,3,8,NA
+187,https://www.naukri.com/job-listings-devops-engineer-codinglimits-nellore-hyderabad-chennai-bengaluru-0-to-1-years-160626008117?src=simjobsjd_rt,Codinglimits Nellore,DevOps Engineer,Fresher,2,9,5,6,6,8,7,1,1,8,NA
+188,https://www.naukri.com/job-listings-cloud-engineer-codinglimits-nellore-hyderabad-chennai-bengaluru-0-to-1-years-160626008366?src=simjobsjd_rt,Codinglimits Nellore,Cloud Engineer Fresher,Fresher,1,8,8,8,8,1,1,1,6,8,NA
+189,https://www.naukri.com/job-listings-junior-devops-engineer-0-2-years-reizend-private-limited-thiruvananthapuram-0-to-2-years-250626006252?src=simjobsjd_rt,Reizend Private Limited,Junior DevOps Engineer,0–2 Years,3,7,9,10,1,10,10,6,7,8,4-6
+190,https://www.naukri.com/job-listings-cloud-system-admin-devops-fresher-can-also-apply-vadodara-wovvtech-vadodara-0-to-3-years-070126014457?src=simjobsjd_rt,WovvTech,Cloud & System Admin (DevOps),0–3 Years,1,10,9,7,1,1,1,1,8,5,NA
+191,https://www.naukri.com/job-listings-devops-engineer-fresher-inorg-global-kolkata-mumbai-new-delhi-hyderabad-pune-chennai-bengaluru-0-to-1-years-100725505248?src=cluster&sid=17838778382483797_1&xp=5&px=1,Inorg,DevOps Engineer,Fresher,8,8,3,7,7,2,1,6,2,8,NA
+192,https://www.naukri.com/job-listings-aws-devops-engineer-natwest-digital-services-india-pvt-ltd-chennai-bengaluru-0-to-3-years-090726923617?src=simjobsjd_rt,NatWest DigitalX,AWS DevOps Engineer,0–3 Years,3,6,6,10,1,9,9,1,8,7,NA
+193,https://www.linkedin.com/jobs/view/4429005884/,CrimsonLogic,SOC Officer,0–2 Years,2,4,9,1,8,1,1,1,10,8,NA
+194,https://www.linkedin.com/jobs/view/4408001053/,ECI,Security Operations Center Associate,0–1 Years,1,3,9,1,1,1,1,1,10,8,NA
+195,https://www.linkedin.com/jobs/view/4439306966/,Fortuna Cysec,Security Analyst I,0–2 Years,1,3,7,1,1,1,1,1,10,8,NA
+196,https://www.linkedin.com/jobs/view/4433514922/,FIS,"Analyst I, Cybersecurity",0–3 Years,1,9,2,1,1,1,1,1,10,8,NA
+197,https://www.linkedin.com/jobs/view/4432143971/,eDOT Solutions,Junior Cybersecurity / Network Engineer — Maritime OT/IT Security,0–2 Years,8,7,10,1,1,1,1,1,10,7,NA
+198,https://www.linkedin.com/jobs/view/4433322752/,Accelleron,SOC Analyst - Monitoring and Triage Specialist,0–3 Years,3,3,8,1,8,1,1,1,10,7,NA
+199,https://www.linkedin.com/jobs/view/4438881959/,Meril,Cyber Security Analyst (SOC Analyst – Level 1),0–2 Years,1,4,9,1,1,1,1,1,10,8,NA
+200,https://www.linkedin.com/jobs/view/4432218534/,Searce Inc,Cloud Operations Engineer,0-1 Years,7,8,8,7,7,1,1,6,8,8,NA
+201,https://cloudsoftsol.com/jobs/graduate-site-reliability-engineer-flipkart-bengaluru-2026/,Flipkart (Walmart Group),Site Reliability Engineer,Fresher,9,10,9,1,1,4,10,8,2,7,18–28 LPA
+202,https://cloudsoftsol.com/jobs/associate-site-reliability-engineer-razorpay-bengaluru-2026/,Razorpay,Associate Site Reliability Engineer,Fresher–2 Years,9,10,9,10,1,4,10,10,7,2,14–22 LPA
+203,https://www.linkedin.com/posts/thinkwave-solution_emailabrid-activity-7482325970566238208-PXSA?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFzbsQYBc81s57VcJNsJTRfnE5hoOr8ujIA,ThinkWave Solution,Cyber Security Analyst,0–2 Years (Freshers can apply),1,3,8,1,1,1,1,1,10,5,NA
+204,https://www.linkedin.com/jobs/view/4418151023/,NK Securities Research,Information & Security Engineer,0–5 Years,8,10,10,1,1,1,1,1,10,6,NA
+205,https://cloudsoftsol.com/jobs/google-cloud-engineer-university-graduate-google-india-2026/,Google India,Google Cloud — Customer Engineer,Fresher–1 Year,8,4,8,4,4,2,8,7,4,10,22–34 LPA
+206,https://cloudsoftsol.com/jobs/aws-cloud-support-associate-graduate-amazon-bengaluru-2026/,Amazon Web Services (AWS) India,AWS Cloud Support Associate,Fresher–1 Year,8,10,10,10,1,1,1,1,3,10,8–14 LPA
+207,https://www.linkedin.com/jobs/view/4433942614/,HCLTech,Administrator (Support & Operations),Fresher,5,8,5,1,1,1,1,1,4,7,NA
+208,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-ahmedabad-bhubaneswar-june-2026/,TCS,DevOps Engineer,Fresher – 1 Year,6,8,7,8,8,8,8,6,2,6,4–8 LPA
+209,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-ahmedabad-bhubaneswar-june-2026/,Adani Digital,Site Reliability Engineer (SRE),Fresher – 1 Year,6,8,7,8,8,8,8,6,2,6,4–8 LPA
+210,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-ahmedabad-bhubaneswar-june-2026/,Capgemini,DevOps Engineer,Fresher – 1 Year,6,8,7,8,8,8,8,6,2,6,4–8 LPA
+211,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-ahmedabad-bhubaneswar-june-2026/,TCS,Site Reliability Engineer (SRE),Fresher – 1 Year,6,8,7,8,8,8,8,6,2,6,4–8 LPA
+212,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-ahmedabad-bhubaneswar-june-2026/,Adani Digital,DevOps Engineer,Fresher – 1 Year,6,8,7,8,8,8,8,6,2,6,4–8 LPA
+213,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-ahmedabad-bhubaneswar-june-2026/,Capgemini,Site Reliability Engineer (SRE),Fresher – 1 Year,6,8,7,8,8,8,8,6,2,6,4–8 LPA
+214,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-ahmedabad-bhubaneswar-june-2026/,Cognizant,Site Reliability Engineer (SRE),Fresher – 1 Year,6,8,7,8,8,8,8,6,2,6,4–8 LPA
+215,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-ahmedabad-bhubaneswar-june-2026/,Cognizant,DevOps Engineer,Fresher – 1 Year,6,8,7,8,8,8,8,6,2,6,4–8 LPA
+216,https://cloudsoftsol.com/jobs/sre-devops-fresher-multi-city-mumbai-noida-june-2026/,Wipro,DevOps Engineer,Fresher – 1 Year,6,8,7,8,8,8,7,6,2,6,4–8 LPA
+217,https://cloudsoftsol.com/jobs/sre-devops-fresher-multi-city-mumbai-noida-june-2026/,Tech Mahindra,Site Reliability Engineer (SRE),Fresher – 1 Year,6,8,7,8,8,8,7,6,2,6,4–8 LPA
+218,https://cloudsoftsol.com/jobs/sre-devops-fresher-multi-city-mumbai-noida-june-2026/,Wipro,Site Reliability Engineer (SRE),Fresher – 1 Year,6,8,7,8,8,8,7,6,2,6,4–8 LPA
+219,https://cloudsoftsol.com/jobs/sre-devops-fresher-multi-city-mumbai-noida-june-2026/,Tech Mahindra,DevOps Engineer,Fresher – 1 Year,6,8,7,8,8,8,7,6,2,6,4–8 LPA
+220,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-south-india-chennai-bangalore-kerala-june-2026/,Innovature Labs,DevOps Engineer,Fresher – 1 Year,6,8,7,8,8,8,7,6,2,6,4.5–9 LPA
+221,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-south-india-chennai-bangalore-kerala-june-2026/,Infosys,Site Reliability Engineer (SRE),Fresher – 1 Year,6,8,7,8,8,8,7,6,2,6,4.5–9 LPA
+222,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-south-india-chennai-bangalore-kerala-june-2026/,Innovature Labs,Site Reliability Engineer (SRE),Fresher – 1 Year,6,8,7,8,8,8,7,6,2,6,4.5–9 LPA
+223,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-south-india-chennai-bangalore-kerala-june-2026/,Infosys,DevOps Engineer,Fresher – 1 Year,6,8,7,8,8,8,7,6,2,6,4.5–9 LPA
+224,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-south-india-chennai-bangalore-kerala-june-2026/,UST,DevOps Engineer,Fresher – 1 Year,6,8,7,8,8,8,7,6,2,6,4.5–9 LPA
+225,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-south-india-chennai-bangalore-kerala-june-2026/,UST,Site Reliability Engineer (SRE),Fresher – 1 Year,6,8,7,8,8,8,7,6,2,6,4.5–9 LPA
+226,https://cloudsoftsol.com/jobs/fresher-cloud-devops-engineer-gravitix-tech-hyderabad-june-2026/,Gravitix Tech,Cloud DevOps Engineer,Fresher – 1 Year,6,8,7,8,8,8,7,6,2,6,4–7 LPA
+227,https://cloudsoftsol.com/jobs/analytical-brains-education-aws-devops-engineer-fresher-hyderabad-2026/,Analytical Brains Education Pvt Ltd,AWS DevOps Engineer,Fresher – 1 Year,7,9,6,10,7,9,9,9,2,8,3–6 LPA
+228,https://cloudsoftsol.com/jobs/junior-devops-engineer-cloud-platform-wipro-hyderabad-2026/,Wipro Technologies,Junior DevOps Engineer,Fresher–2 Years,7,10,5,8,8,10,10,10,2,8,4–8 LPA
+229,https://cloudsoftsol.com/jobs/gcp-associate-cloud-engineer-searce-pune-2026/,Searce Inc,Associate Cloud Engineer,Fresher–2 Years,8,6,7,1,1,3,8,9,1,9,6–10 LPA
+230,https://cloudsoftsol.com/jobs/associate-cloud-engineer-aws-track-tcs-fresher-2026/,Tata Consultancy Services (TCS),Associate Cloud Engineer — AWS Track,Fresher–1 Year,7,8,6,10,1,1,1,1,3,8,4–7 LPA
+231,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-pune-vizag-coimbatore-june-2026/,Persistent,DevOps Engineer,Fresher–1 Year,6,8,7,8,8,8,8,6,2,6,4–8.5 LPA
+232,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-pune-vizag-coimbatore-june-2026/,Robert Bosch,DevOps Engineer,Fresher–1 Year,6,8,7,8,8,8,8,6,2,6,4–8.5 LPA
+233,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-pune-vizag-coimbatore-june-2026/,Zensar,DevOps Engineer,Fresher–1 Year,6,8,7,8,8,8,8,6,2,6,4–8.5 LPA
+234,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-pune-vizag-coimbatore-june-2026/,Persistent,Site Reliability Engineer (SRE),Fresher–1 Year,6,8,7,8,8,8,8,6,2,6,4–8.5 LPA
+235,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-pune-vizag-coimbatore-june-2026/,Robert Bosch,Site Reliability Engineer (SRE),Fresher–1 Year,6,8,7,8,8,8,8,6,2,6,4–8.5 LPA
+236,https://cloudsoftsol.com/jobs/devops-sre-fresher-multi-city-pune-vizag-coimbatore-june-2026/,Zensar,Site Reliability Engineer (SRE),Fresher–1 Year,6,8,7,8,8,8,8,6,2,6,4–8.5 LPA
+237,https://www.linkedin.com/jobs/view/4422403787/,Falkonry,Systems Software Engineer,Fresher,7,10,9,8,8,9,9,6,6,7,NA
+238,https://www.naukri.com/job-listings-cloud-consultant-ti-steps-hyderabad-chennai-bengaluru-0-to-2-years-300825009785?src=jobsearchDesk&sid=17842240658592862_1&xp=5&px=1&nignbevent_src=jobsearchDeskGNB,ti Steps,Cloud Consultant,0–2 Years,1,1,3,2,2,1,1,1,1,10,3–4 LPA
+239,https://www.naukri.com/job-listings-platform-reliability-engineer-ti-steps-hyderabad-chennai-bengaluru-0-to-2-years-151025018260?src=simjobsjd_rt,ti Steps,Platform Reliability Engineer,0–2 Years,3,8,7,7,7,4,10,4,1,6,1–3 LPA
+240,https://www.naukri.com/job-listings-cloud-engineer-freshers-pragma-edge-software-services-private-limited-hyderabad-0-to-2-years-280423501300?src=jobsearchDesk&sid=17842240658592862_1&xp=8&px=1&nignbevent_src=jobsearchDeskGNB,Pragma Edge Software Services,Cloud Engineer Associate,0–2 Years,1,8,7,10,1,7,6,1,2,8,NA
+241,https://www.naukri.com/job-listings-junior-analyst-cyber-risk-unit-bajaj-finance-limited-pune-0-to-1-years-150726933253?src=drecomm_profile&sid=17843068879803210&xp=1&px=1,Bajaj Finance,Junior Analyst - Cyber Risk Unit,0–1 Years,1,2,7,1,1,1,1,1,9,8,NA
+242,https://www.naukri.com/job-listings-graduate-engineer-trainee-cloud-ai-v5-techsol-bengaluru-0-to-1-years-130726015097?src=drecomm_profile&sid=17843068879803210&xp=49&px=1,V5 TechSol,Graduate Engineer Trainee (Cloud & AI),0–1 Years,6,7,7,8,8,1,1,1,2,7,NA
+243,https://www.linkedin.com/jobs/view/4441191372/,Innomax IT Solutions Pvt. Ltd.,AWS Cloud Engineer,0–1 Years,5,7,7,9,1,1,1,1,2,7,NA
+244,https://www.linkedin.com/jobs/view/4440995637/,Hyland,Associate Cloud Specialist,Entry-Level / Associate,1,4,7,1,1,1,1,1,3,7,NA
+245,https://www.linkedin.com/jobs/view/4439215325/,SLB,Associate Cloud Engineer,Fresher,4,5,6,8,8,1,1,1,7,6,NA
+246,https://www.linkedin.com/jobs/view/4425481444/,Signant Health,Cloud Operations Engineer - Technology IT,Fresher,2,7,7,1,9,1,5,1,4,8,NA
+247,https://www.linkedin.com/jobs/view/4419441160/,Upwind Security,Junior Cloud Security Validation Engineer,Fresher,8,9,9,8,7,8,8,7,10,3,NA
+248,https://www.linkedin.com/jobs/view/4441190631/,DigitalOcean,Associate Cloud Support Engineer,Fresher,7,9,9,4,4,8,8,8,2,8,NA
+249,https://www.linkedin.com/jobs/view/4441190168/,VENISO,DevOps Engineer,Fresher,1,9,6,2,1,9,5,4,2,5,NA
+250,https://www.linkedin.com/jobs/view/4133244935/,Thoucentric,Platform Engineer,Fresher,8,8,6,7,7,8,8,5,2,7,NA
+251,https://in.indeed.com/viewjob?jk=3c4fd98b44009b86,Kognito Kube Private Limited,DevOps Engineer,Fresher,8,9,8,8,7,9,9,8,7,8,NA
+252,https://www.linkedin.com/jobs/view/4437959898/?alternateChannel=search&trackingId=...,EFICIYENT,Junior Security Analyst,Fresher,6,4,8,1,1,1,1,1,10,8,NA
+253,https://cloudsoftsol.com/jobs/zyphra-tech-cloud-devops-engineer-fresher-hyderabad-2026/	,Zyphra Tech	,Cloud DevOps Engineer,Fresher,7,9,8,9,8,9,8,8,3,8,4-6
+254,https://in.indeed.com/viewjob?jk=0ee5b55c81a45e76	,EnactOn Technologies,	DevOps Engineer,0-2 years,8,7,9,1,6,8,9,6,8,4,NA
+255,https://in.indeed.com/viewjob?jk=df10a87c77f6cd4d,i2k2 Networks,AWS Cloud Engineer ,Fresher,1,9,8,9,1,1,1,1,4,8,NA
+256,https://in.indeed.com/viewjob?jk=df10a87c77f6cd4d	,Cloudseed Technologies,Cloud Engineering ,Fresher,6,6,7,8,8,2,2,1,6,8,NA
+257,https://www.tcsion.com/jobs/PUMO-TECHNOVATION-INDIA-PRIVATE-LIMITED/Cyber-Security-Engineer-21558/	,PUMO TECHNOVATION INDIA PRIVATE LIMITED,Cyber Security Engineer,Fresher,3,5,7,1,1,1,1,1,9,7,3.0–3.5
+258,https://www.tcsion.com/jobs/IOPEX-TECHNOLOGIES-PRIVATE-LIMITED/SOC-Security-Operations-Center-Trainee-21418/,IOPEX TECHNOLOGIES PRIVATE LIMITED,Security Operations Center  Trainee,0-1 years,2,6,8,1,1,1,1,1,9,8,2.5–3.0
+259,https://www.tcsion.com/jobs/GreatHire/Cyber-Security-Analyst--Freshers-21743/,GreatHire,Cyber Security Analyst,Fresher,6,7,8,1,1,1,1,1,10,8,3.0–6.0
+260,https://cloudsoftsol.com/jobs/hexaware-crossplane-backstage-platform-engineer-fresher-chennai-june-2026/,Hexaware	,Crossplane + Backstage Platform Engineer,Fresher,7,8,6,8,8,7,10,9,3,8,1.32-2.40

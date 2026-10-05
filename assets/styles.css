@@ -1,0 +1,1063 @@
+/* EmployaAI design tokens - v5 "no-orange" restyle. Purple/violet stays the
+   one brand colour (score card, primary buttons, active states); pink/rose
+   takes over the old "warning/attention" role; red is reserved for real
+   errors only; green for success. Teal and sky-cyan are two NEW accent
+   colours added purely for fun/decorative moments (streaks, badges,
+   illustrations) - they never carry status meaning. See decisions.md for
+   why orange was removed and why this intentionally departs from the
+   locked v2 design pack. */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Baloo+2:wght@600;700;800&display=swap');
+
+:root {
+    /* ---- Brand colour: purple/violet ---- */
+    --color-primary: #7C3AED;
+    --color-primary-dark: #6D28D9;
+    --color-primary-light: #A78BFA;
+    --color-secondary: #4F46E5;
+    --color-secondary-dark: #4338CA;
+    --color-secondary-light: #E0E7FF;
+    --color-gradient: linear-gradient(120deg, #7C3AED 0%, #A855F7 55%, #EC4899 100%);
+
+    /* Two playful accents, new in this restyle - highlights, icon tiles,
+       illustrations, streak/XP chips. Never used for status/meaning. */
+    --color-fun-teal: #14B8A6;
+    --color-fun-teal-bg: #F0FDFA;
+    --color-fun-teal-text: #115E59;
+    --color-fun-cyan: #06B6D4;
+    --color-fun-cyan-bg: #ECFEFF;
+    --color-fun-cyan-text: #155E75;
+
+    /* ---- Surfaces & text ---- */
+    --color-bg: #FAF9FC;
+    --color-surface: #FFFFFF;
+    --color-text-primary: #211C36;
+    --color-text-secondary: #6B6478;
+    --color-border: #E5E1F0;
+
+    --color-accent-bg: #F5F3FF;
+    --color-accent-text: #6D28D9;
+
+    /* Status: dark text on a light tint, per the design pack's own
+       accessibility rule. Never colour alone - every badge that uses these
+       also carries a word. Warning is pink/rose now (never orange/amber);
+       red is reserved for real errors only; green for success. */
+    --color-success: #16A34A;
+    --color-success-bg: #DCFCE7;
+    --color-success-text: #166534;
+
+    --color-warning: #EC4899;
+    --color-warning-bg: #FDF2F8;
+    --color-warning-text: #9D174D;
+
+    --color-error: #DC2626;
+    --color-error-bg: #FEE2E2;
+    --color-error-text: #991B1B;
+
+    --color-info-bg: #EDE9FE;
+    --color-info-text: #5B21B6;
+
+    /* ---- Sidebar: deep indigo, not orange-tinted ---- */
+    --color-sidebar-bg: #211C36;
+    --color-sidebar-border: rgba(255, 255, 255, 0.08);
+    --color-sidebar-text: #C9C2E0;
+    --color-sidebar-text-muted: #8A82A6;
+    --color-sidebar-text-strong: #FAF9FC;
+    --color-sidebar-active-bg: rgba(124, 58, 237, 0.24);
+    --color-sidebar-hover-bg: rgba(255, 255, 255, 0.06);
+
+    /* ---- Spacing ---- */
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 32px;
+    --space-5: 40px;
+
+    --radius-sm: 10px;
+    --radius: 16px;
+    --radius-lg: 28px;
+
+    /* Soft, purple-tinted shadows instead of plain grey - a gentle lift,
+       not a heavy effect. */
+    --shadow-sm: 0 2px 4px rgba(124, 58, 237, 0.07);
+    --shadow: 0 4px 14px rgba(124, 58, 237, 0.09), 0 2px 4px rgba(33, 28, 54, 0.04);
+    --shadow-hover: 0 10px 24px rgba(124, 58, 237, 0.18), 0 3px 8px rgba(33, 28, 54, 0.05);
+    --shadow-lg: 0 18px 40px rgba(124, 58, 237, 0.22), 0 6px 14px rgba(33, 28, 54, 0.07);
+
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --transition-fast: 150ms var(--ease);
+    --transition: 220ms var(--ease);
+}
+
+html, body, [class*="css"] {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-text-primary);
+}
+
+.stApp {
+    background: var(--color-bg);
+}
+
+.main .block-container,
+[data-testid="stMainBlockContainer"],
+[data-testid="stAppViewBlockContainer"] {
+    padding-top: 3.5rem !important;
+    max-width: 1280px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+/* ---------- Motion: small, purposeful, and off for anyone who's asked
+   their OS not to show it ---------- */
+@keyframes ea-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.35); }
+    50%      { box-shadow: 0 0 0 6px rgba(124, 58, 237, 0); }
+}
+@keyframes ea-shimmer {
+    0%   { transform: translateX(-120%); }
+    100% { transform: translateX(220%); }
+}
+@keyframes ea-gradient-shift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .ea-card-hero, .st-key-dashboard-cta, .ea-step-dot.current, .ea-progress-fill::after {
+        animation: none !important;
+    }
+    .ea-card, .stButton > button, [data-testid="stSidebar"] [class*="st-key-nav-row-"] {
+        transition: none !important;
+    }
+}
+
+/* ---------- Type scale ---------- */
+/* Body copy stays Poppins; headings move to Baloo 2, a rounder display
+   face, for a friendlier feel without touching reading comfort. Nothing
+   below 14px anywhere. */
+.ea-display   { font-family: 'Baloo 2', sans-serif; font-size: 36px; font-weight: 700; line-height: 2.3;  margin: 0; }
+.ea-heading   { font-family: 'Baloo 2', sans-serif; font-size: 30px; font-weight: 700; line-height: 2.3;  margin: 0; }
+.ea-subhead   { font-family: 'Baloo 2', sans-serif; font-size: 24px; font-weight: 600; line-height: 2.3; margin: 0; }
+.ea-section   { font-family: 'Baloo 2', sans-serif; font-size: 24px; font-weight: 600; line-height: 2.3;  margin: 0; }
+.ea-body      { font-size: 16px; font-weight: 400; line-height: 1.6;  margin: 0; }
+.ea-small     { font-size: 14px; font-weight: 500; line-height: 1.5;  margin: 0; color: var(--color-text-secondary); }
+.ea-big-number{ font-family: 'Baloo 2', sans-serif; font-size: 42px; font-weight: 700; line-height: 1.1; margin: 0; font-variant-numeric: tabular-nums; }
+
+/* ---------- Cards ---------- */
+.ea-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: var(--space-3);
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.ea-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--color-primary-light);
+}
+
+/* Streamlit's own stMarkdownContainer carries a built-in -16px bottom
+   margin, sized to exactly cancel the 16px flex gap our elements normally
+   get - anywhere a .ea-card is rendered via st.markdown and a st.button
+   sits directly under it, that cancels the gap entirely and fuses the
+   card straight onto the button below it. Restore the gap only for
+   markdown containers that wrap one of our cards. */
+[data-testid="stMarkdownContainer"]:has(> .ea-card),
+[data-testid="stMarkdownContainer"]:has(> .ea-card-hero) {
+    margin-bottom: 0 !important;
+}
+
+/* st.container(border=True) renders its own border directly on
+   [data-testid="stVerticalBlock"] via a Streamlit-generated emotion-cache
+   class rather than a stable data attribute. Pinned to streamlit==1.55 in
+   requirements.txt, so this class is consistent for this project - but if
+   a Streamlit upgrade ever changes it, re-inspect and update this
+   selector (see decisions.md for how it was found). Restyled to match
+   .ea-card exactly so a bordered container and a hand-built card look
+   identical instead of Streamlit's plain square-cornered default. */
+[data-testid="stVerticalBlock"].st-emotion-cache-wpz2dm {
+    border: 1px solid var(--color-border) !important;
+    border-radius: var(--radius) !important;
+    box-shadow: var(--shadow) !important;
+    padding: var(--space-3) !important;
+}
+
+/* ---------- Alignment: side-by-side cards match height by default ---------- */
+/* A row of columns only grows as tall as its tallest child's own content -
+   a short card in a row (eg. dashboard's "today's goal" next to the taller
+   score/profile cards) sits short with dead space below it otherwise.
+   align-items:stretch makes the COLUMN match height; the chain below
+   carries that height into the card. This is the exact pattern already
+   proven (browser-tested, see progress.md) for the quick-action row -
+   scoped per-row via a container key rather than applied site-wide, since
+   a column holding several stacked elements (icon_header + caption +
+   chart) should NOT all stretch to fill and a blanket rule would break
+   that. */
+.st-key-dashboard-score-row [data-testid="stHorizontalBlock"],
+.st-key-dashboard-quick-actions [data-testid="stHorizontalBlock"] {
+    align-items: stretch;
+}
+.st-key-dashboard-score-row [data-testid="stHorizontalBlock"] {
+    flex-wrap: nowrap !important;
+}
+.st-key-dashboard-score-row [data-testid="stColumn"] {
+    min-width: 0 !important;
+    width: 0 !important;
+    flex: 1 1 0 !important;
+    align-self: stretch !important;
+}
+.st-key-dashboard-score-row [data-testid="stColumn"] > div,
+.st-key-dashboard-score-row [data-testid="stVerticalBlock"],
+.st-key-dashboard-score-row [data-testid="stElementContainer"],
+.st-key-dashboard-score-row [data-testid="stMarkdown"],
+.st-key-dashboard-score-row [data-testid="stMarkdownContainer"],
+.st-key-dashboard-quick-actions [data-testid="stColumn"] > div,
+.st-key-dashboard-quick-actions [data-testid="stVerticalBlock"],
+.st-key-dashboard-quick-actions [data-testid="stElementContainer"],
+.st-key-dashboard-quick-actions [data-testid="stMarkdown"],
+.st-key-dashboard-quick-actions [data-testid="stMarkdownContainer"] {
+    height: 100%;
+}
+.st-key-dashboard-score-row .ea-card,
+.st-key-dashboard-score-row .ea-card-hero,
+.st-key-dashboard-quick-actions .ea-card {
+    height: 100%;
+    box-sizing: border-box;
+}
+.st-key-dashboard-score-row [data-testid="stColumn"] > div {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+.st-key-dashboard-score-row .ea-card,
+.st-key-dashboard-score-row .ea-card-hero {
+    height: 274px;
+    min-height: 274px;
+}
+
+
+/* Roadmap: the "Projected score" block sits in the header's right column,
+   next to a much taller page title - without its own top padding it sits
+   flush with the very top of the row and reads as clipped against
+   Streamlit's own header bar above it. (This rule was previously
+   swallowed inside the block above it by a stray brace, which - under
+   CSS's native nesting rules - silently rescoped it to only apply nested
+   inside that unrelated selector, so it never actually took effect.) */
+.st-key-roadmap-header-actions {
+    padding-top: 24px;
+}
+
+@media (max-width: 767px) {
+    .st-key-dashboard-score-row [data-testid="stHorizontalBlock"] {
+        flex-wrap: wrap !important;
+    }
+    .st-key-dashboard-score-row [data-testid="stColumn"] {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+    }
+    .st-key-dashboard-score-row .ea-card,
+    .st-key-dashboard-score-row .ea-card-hero {
+        height: auto;
+        min-height: 0;
+    }
+}
+
+/* Icon-in-circle section headers, used via components.cards.icon_header() */
+.ea-icon-badge {
+    width: 38px; height: 38px; border-radius: var(--radius-sm);
+    background: var(--color-accent-bg);
+    color: var(--color-primary);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+.ea-header-row {
+    display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-1);
+}
+
+/* The one "single gradient rule" (purple -> violet -> pink) - used by the
+   score hero card and the bottom CTA bar, the two spots the design pack
+   calls out for it. A little bigger radius here specifically, per the
+   "friendlier hero/score cards" brief. */
+.ea-card-hero {
+    background: var(--color-gradient);
+    background-size: 200% 200%;
+    animation: ea-gradient-shift 12s ease-in-out infinite;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-3);
+    color: #fff;
+}
+.ea-card-hero .ea-small { color: rgba(255,255,255,0.85); }
+
+.ea-card-kicker {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-1);
+}
+
+/* ---------- Badges ---------- */
+.ea-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.ea-badge-success { background: var(--color-success-bg); color: var(--color-success-text); }
+.ea-badge-warning { background: var(--color-warning-bg); color: var(--color-warning-text); }
+.ea-badge-error   { background: var(--color-error-bg);   color: var(--color-error-text); }
+.ea-badge-info    { background: var(--color-info-bg);    color: var(--color-info-text); }
+.ea-badge-purple  { background: var(--color-accent-bg); color: var(--color-accent-text); }
+.ea-badge-neutral { background: #F1EFF7; color: #433C58; }
+
+/* ---------- Step dots (assessment / profile style trackers) ---------- */
+.ea-step-dot {
+    width: 24px; height: 24px; border-radius: 999px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700;
+}
+.ea-step-dot.done { background: var(--color-success); color: #fff; }
+.ea-step-dot.current {
+    background: var(--color-primary);
+    color: #fff;
+    animation: ea-pulse 1.8s ease-in-out infinite;
+}
+.ea-step-dot.pending { background: #F1EFF7; color: var(--color-text-secondary); }
+
+/* ---------- Assessment answer options ---------- */
+[class*="st-key-opt-"] {
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 4px 8px;
+    margin-bottom: 10px;
+    transition: border-color var(--transition-fast);
+}
+[class*="st-key-opt-"]:hover {
+    border-color: var(--color-primary-light);
+}
+[class*="st-key-opt-"] .stButton > button {
+    background: transparent;
+    border: none;
+    text-align: left;
+    justify-content: flex-start;
+    color: var(--color-text-primary);
+    font-weight: 500;
+    white-space: normal;
+    height: auto;
+    min-height: 40px;
+}
+[class*="st-key-opt-"] .stButton > button > div {
+    display: flex !important;
+    justify-content: flex-start !important;
+    width: 100%;
+    text-align: left;
+}
+
+/* ---------- Question navigation strip (assessment) ---------- */
+.st-key-assessment-nav-strip [data-testid="stHorizontalBlock"] {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 6px;
+    padding-bottom: 4px;
+}
+.st-key-assessment-nav-strip [data-testid="stColumn"] {
+    min-width: 40px !important;
+    width: 40px !important;
+    flex: 0 0 auto !important;
+}
+.st-key-assessment-nav-strip .stButton > button {
+    min-height: 38px;
+    height: 38px;
+    padding: 0;
+    border-radius: 999px;
+    font-size: 13px;
+}
+
+/* ---------- Progress bars ---------- */
+.ea-progress-track {
+    width: 100%;
+    height: 9px;
+    background: #F1EFF7;
+    border-radius: 999px;
+    overflow: hidden;
+}
+.ea-progress-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: var(--color-primary);
+    transition: width 450ms var(--ease);
+    position: relative;
+    overflow: hidden;
+}
+.ea-progress-fill::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 40%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+    animation: ea-shimmer 2.4s ease-in-out infinite;
+}
+.ea-progress-fill.success { background: var(--color-success); }
+.ea-progress-fill.warning { background: var(--color-warning); }
+.ea-progress-fill.error   { background: var(--color-error); }
+
+/* ---------- Buttons ---------- */
+.stButton > button {
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    min-height: 46px;
+    padding: 0 var(--space-2);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+                background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+.stButton > button[kind="primary"] {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow);
+}
+.stButton > button[kind="primary"]:hover {
+    background: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+.stButton > button[kind="secondary"]:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary-dark);
+    background: var(--color-accent-bg);
+    transform: translateY(-2px);
+}
+.stButton > button:active {
+    transform: translateY(0) !important;
+}
+.stButton > button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* ---------- Text inputs ---------- */
+.stTextInput > div > div > input,
+.stTextArea > div > div > textarea,
+[data-testid="stTextInput"] input {
+    background: rgba(255, 255, 255, 0.96) !important;
+    color: #1f1633 !important;
+    -webkit-text-fill-color: #1f1633 !important;
+    border-radius: var(--radius-sm);
+    border: 1.5px solid var(--color-border);
+    padding: 10px 14px;
+    min-height: 44px;
+    font-size: 14.5px !important;
+    font-weight: 500 !important;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.stTextInput > div > div > input::placeholder,
+.stTextArea > div > div > textarea::placeholder,
+[data-testid="stTextInput"] input::placeholder {
+    color: #8f83a8 !important;
+    -webkit-text-fill-color: #8f83a8 !important;
+    opacity: 1 !important;
+}
+.stTextInput > div > div > input:focus,
+.stTextArea > div > div > textarea:focus,
+[data-testid="stTextInput"] input:focus {
+    color: #1f1633 !important;
+    -webkit-text-fill-color: #1f1633 !important;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.22);
+    background: #FFFFFF !important;
+}
+[data-testid="stTextInput"] input:-webkit-autofill,
+[data-testid="stTextInput"] input:-webkit-autofill:hover, 
+[data-testid="stTextInput"] input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #1f1633 !important;
+    -webkit-box-shadow: 0 0 0px 1000px #FFFFFF inset !important;
+    box-shadow: 0 0 0px 1000px #FFFFFF inset !important;
+}
+[data-testid="stTextInput"] button {
+    color: #4B3F72 !important;
+}
+[data-testid="stTextInput"] button svg {
+    fill: #4B3F72 !important;
+    stroke: #4B3F72 !important;
+}
+
+/* ---------- Sidebar ---------- */
+[data-testid="stSidebar"] {
+    background: var(--color-sidebar-bg);
+    border-right: 1px solid var(--color-sidebar-border);
+}
+[data-testid="stSidebar"] * { color: var(--color-sidebar-text); }
+[data-testid="stSidebar"] .stButton > button {
+    background: transparent;
+    border: none;
+    text-align: left;
+    justify-content: flex-start;
+    color: var(--color-sidebar-text);
+    font-weight: 500;
+    min-height: 38px;
+    padding-left: 48px;
+    letter-spacing: 0.01em;
+}
+[data-testid="stSidebar"] [class*="st-key-nav-row-"] {
+    position: relative;
+    border-radius: var(--radius-sm);
+    margin-bottom: 2px;
+    border-left: 3px solid transparent;
+    transition: background var(--transition-fast), transform var(--transition-fast);
+}
+[data-testid="stSidebar"] [class*="st-key-nav-row-"]:hover {
+    background: var(--color-sidebar-hover-bg);
+    transform: translateX(3px);
+}
+[data-testid="stSidebar"] [class*="st-key-nav-row-"] .stButton > button:hover {
+    background: transparent;
+    color: var(--color-primary-light);
+}
+/* Pinned to the exact vertical center of the row instead of living in its
+   own flex column - a sibling column's height can drift a px or two from
+   the button's, which is what caused the icon/label baseline to wander. */
+.ea-nav-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-radius: 8px;
+    pointer-events: none;
+    z-index: 1;
+    transition: background var(--transition-fast);
+}
+/* Streamlit's own element wrapper around the icon markdown is itself
+   position:relative, and since the icon inside it is now absolutely
+   positioned (out of flow), that wrapper's height collapses to 0 -
+   making it the (wrong) 0-height containing block .ea-nav-icon's
+   top:50% resolves against. Force it back to static so the row above
+   (which has a real height, set by the button) is the containing block. */
+[data-testid="stSidebar"] [class*="st-key-nav-row-"] [data-testid="stElementContainer"]:has(.ea-nav-icon) {
+    position: static !important;
+}
+[data-testid="stSidebar"] [data-testid="stVerticalBlock"] {
+    gap: 0 !important;
+}
+[data-testid="stSidebar"] .block-container,
+[data-testid="stSidebarUserContent"] {
+    padding-top: 12px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+.ea-nav-group-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-primary-light);
+    margin: 16px 0 8px 4px;
+}
+.ea-nav-group-label::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    flex-shrink: 0;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.20);
+}
+.ea-nav-group-label:first-of-type {
+    margin-top: 4px;
+}
+
+/* ---------- Dashboard quick-action cards ---------- */
+.st-key-dashboard-quick-actions .ea-card:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: var(--color-primary);
+}
+
+/* ---------- Dashboard bottom CTA (Continue assessment) ---------- */
+.st-key-dashboard-cta {
+    background: var(--color-gradient);
+    background-size: 200% 200%;
+    animation: ea-gradient-shift 12s ease-in-out infinite;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-2) var(--space-3);
+}
+.st-key-dashboard-cta .ea-small { color: rgba(255,255,255,0.9); }
+.st-key-dashboard-cta .stButton > button[kind="primary"] {
+    background: #fff;
+    color: var(--color-primary-dark);
+    border-color: #fff;
+}
+.st-key-dashboard-cta .stButton > button[kind="primary"]:hover {
+    background: rgba(255,255,255,0.9);
+}
+
+/* ---------- Streak / XP chip + achievement badges (new) ---------- */
+/* Used by components.fun.streak_chip() / achievement_badges() - purely
+   decorative "fun" moments, styled with the new teal/cyan accents rather
+   than the status-meaning palette above. */
+.ea-streak-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-fun-teal-bg);
+    color: var(--color-fun-teal-text);
+    border-radius: 999px;
+    padding: 6px 14px 6px 10px;
+    font-weight: 700;
+    font-size: 14px;
+}
+.ea-level-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-fun-cyan-bg);
+    color: var(--color-fun-cyan-text);
+    border-radius: 999px;
+    padding: 6px 14px 6px 10px;
+    font-weight: 700;
+    font-size: 14px;
+}
+.ea-achievement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+    padding: var(--space-2);
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.ea-achievement.unlocked {
+    border-color: var(--color-fun-teal);
+    box-shadow: var(--shadow-sm);
+}
+.ea-achievement.unlocked:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+.ea-achievement.locked {
+    opacity: 0.5;
+}
+.ea-achievement-icon {
+    width: 44px; height: 44px; border-radius: 999px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--color-fun-teal-bg);
+    color: var(--color-fun-teal);
+    flex-shrink: 0;
+}
+.ea-achievement.locked .ea-achievement-icon {
+    background: #F1EFF7;
+    color: var(--color-text-secondary);
+}
+
+/* ---------- Mascot + empty states (new) ---------- */
+.ea-mascot {
+    flex-shrink: 0;
+}
+.ea-empty-state {
+    text-align: center;
+    padding: var(--space-4) var(--space-3);
+}
+.ea-empty-state img, .ea-empty-state svg {
+    max-width: 160px;
+    margin: 0 auto var(--space-2) auto;
+}
+
+/* ---------- Mobile bottom nav (hidden by default, shown under 768px) ---------- */
+.st-key-mobile-bottom-nav {
+    display: none;
+}
+
+/* ---------- Responsive table <-> stacked cards ---------- */
+.st-key-table-mobile { display: none; }
+
+/* ================= Breakpoints ================= */
+
+@media (max-width: 1023px) {
+    [data-testid="stSidebar"] { min-width: 208px !important; max-width: 208px !important; }
+    [data-testid="stSidebar"] .stButton > button {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+    }
+}
+
+@media (max-width: 767px) {
+    [data-testid="stSidebar"] { min-width: 264px !important; max-width: 320px !important; }
+    [data-testid="stSidebar"] .stButton > button {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+    }
+
+    .ea-heading  { font-size: 26px; }
+    .ea-subhead  { font-size: 21px; }
+    .ea-big-number { font-size: 34px; }
+
+    .st-key-table-desktop { display: none; }
+    .st-key-table-mobile  { display: block; }
+
+    .ea-mascot img, .ea-mascot svg { max-width: 72px; }
+    .ea-empty-state img, .ea-empty-state svg { max-width: 120px; }
+
+    .st-key-mobile-bottom-nav {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--color-surface);
+        border-top: 1px solid var(--color-border);
+        padding: 6px 4px 10px 4px;
+        z-index: 999;
+    }
+    .st-key-mobile-bottom-nav [data-testid="stHorizontalBlock"] {
+        flex-direction: row !important;
+        gap: 0 !important;
+    }
+    .st-key-mobile-bottom-nav [data-testid="stColumn"] {
+        min-width: 0 !important;
+        width: auto !important;
+        flex: 1 1 0 !important;
+    }
+    .st-key-mobile-bottom-nav .stButton > button {
+        min-height: 40px;
+        padding: 4px 2px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--color-text-secondary);
+        background: transparent;
+        border: none;
+        white-space: nowrap;
+    }
+
+    .block-container { padding-bottom: 74px !important; }
+}
+
+
+/* =====================================================================
+   v6 alignment pass - shared grid + tile system
+   ===================================================================== */
+
+/* Rows whose key starts with "cards-" hold one card per column. Columns
+   stretch to the tallest, and each card fills its column, so every card in
+   the group has the same width, height, padding and internal layout. */
+[class*="st-key-cards-"] [data-testid="stHorizontalBlock"] { align-items: stretch; }
+[class*="st-key-cards-"] [data-testid="stColumn"] { min-width: 0 !important; align-self: stretch !important; }
+[class*="st-key-cards-"] [data-testid="stColumn"] > div,
+[class*="st-key-cards-"] [data-testid="stColumn"] [data-testid="stVerticalBlock"],
+[class*="st-key-cards-"] [data-testid="stColumn"] [data-testid="stElementContainer"],
+[class*="st-key-cards-"] [data-testid="stColumn"] [data-testid="stMarkdown"],
+[class*="st-key-cards-"] [data-testid="stColumn"] [data-testid="stMarkdownContainer"] { height: 100%; }
+[class*="st-key-cards-"] [data-testid="stMarkdownContainer"]:has(> .ea-card),
+[class*="st-key-cards-"] [data-testid="stMarkdownContainer"]:has(> .ea-achievement) { margin-bottom: 0 !important; }
+[class*="st-key-cards-"] .ea-card,
+[class*="st-key-cards-"] .ea-achievement { height: 100%; box-sizing: border-box; }
+
+/* Rows whose key starts with "panels-" hold header + caption + a bordered
+   panel per column: columns stretch and the panel grows to fill, so the
+   top edges and the bottom edges line up. */
+[class*="st-key-panels-"] [data-testid="stHorizontalBlock"] { align-items: stretch; }
+[class*="st-key-panels-"] [data-testid="stColumn"] { min-width: 0 !important; align-self: stretch !important; }
+[class*="st-key-panels-"] [data-testid="stColumn"] > div { display: flex; flex-direction: column; height: 100%; }
+[class*="st-key-panels-"] [data-testid="stVerticalBlockBorderWrapper"] { flex: 1 1 auto; box-sizing: border-box; }
+
+/* Tiles: one internal structure for every card in a group */
+.ea-tile { display: flex; flex-direction: column; justify-content: flex-start; padding: var(--space-3); box-sizing: border-box; }
+.ea-action-tile { min-height: 132px; gap: 14px; }
+.ea-tile-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.ea-tile-text { min-width: 0; }
+.ea-tile-title { font-size: 15px; font-weight: 600; line-height: 1.4; color: var(--color-text-primary); }
+.ea-tile-sub { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--color-text-secondary); }
+.ea-tile-chevron { display: flex; flex-shrink: 0; }
+.ea-stat-tile { min-height: 124px; }
+.ea-stat-slot { height: 28px; margin-top: 6px; display: flex; align-items: center; }
+
+/* Achievements: identical size whatever the state; only visuals change */
+.ea-achievement { min-height: 128px; justify-content: flex-start; padding: var(--space-2); box-sizing: border-box; }
+.ea-achievement-name { font-size: 14px; font-weight: 600; line-height: 1.4; color: var(--color-text-primary); }
+.ea-achievement-status { font-size: 13px; font-weight: 500; line-height: 1.4; color: var(--color-text-secondary); }
+.ea-achievement.locked { opacity: 0.55; }
+
+/* Dashboard: Today's goal is a real card container so it can hold an
+   action, and matches the height of its row-mates. */
+.st-key-dashboard-goal-card {
+    background: var(--color-accent-bg);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: var(--space-3);
+    height: 274px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.st-key-dashboard-goal-card [data-testid="stMarkdownContainer"] { margin-bottom: 0 !important; }
+.st-key-dashboard-score-row .st-key-dashboard-goal-card { height: 274px !important; min-height: 274px !important; flex: 0 0 274px; }
+.st-key-dashboard-score-row .st-key-dashboard-goal-card [data-testid="stElementContainer"] { height: auto; }
+
+/* Employability score: drivers card fills the space right of the hero */
+.st-key-score-top-row [data-testid="stHorizontalBlock"] { align-items: stretch; }
+.st-key-score-top-row [data-testid="stColumn"] { min-width: 0 !important; align-self: stretch !important; }
+.st-key-score-top-row [data-testid="stColumn"] > div { display: flex; flex-direction: column; height: 100%; gap: 16px; }
+.st-key-score-top-row .ea-card-hero { min-height: 230px; box-sizing: border-box; }
+.st-key-score-drivers-card {
+    flex: 1 1 auto;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: var(--space-3);
+    box-sizing: border-box;
+    width: 100%;
+}
+.st-key-score-top-row [data-testid="stColumn"] > div > *:has(.st-key-score-drivers-card),
+.st-key-score-top-row [data-testid="stColumn"] > div > *:has(.st-key-score-drivers-card) > [data-testid="stVerticalBlock"] { flex: 1 1 auto; display: flex; flex-direction: column; }
+.st-key-score-top-row .st-key-score-drivers-card { flex: 1 1 auto; }
+.ea-kv { display: grid; grid-template-columns: 1fr auto; column-gap: 16px; align-items: center; font-size: 14px; padding: 6px 0; }
+.ea-kv b { text-align: right; font-variant-numeric: tabular-nums; }
+.ea-driver-list { display: flex; flex-direction: column; gap: 14px; margin-top: 12px; }
+.ea-driver { display: grid; grid-template-columns: 170px minmax(0, 1fr) 56px; column-gap: 16px; align-items: center; font-size: 14px; }
+.ea-driver-label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ea-driver-track { display: block; height: 10px; background: #F1EFF7; border-radius: 6px; overflow: hidden; }
+.ea-driver-fill { display: block; height: 100%; border-radius: 6px; }
+.ea-driver.pos .ea-driver-fill { background: var(--color-primary); }
+.ea-driver.neg .ea-driver-fill { background: #D8D4E0; }
+.ea-driver-value { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+.ea-driver.pos .ea-driver-value { color: var(--color-primary); }
+.ea-driver.neg .ea-driver-value { color: var(--color-text-secondary); }
+
+/* Analytics: attempts list rows */
+.ea-attempt-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 10px 0; border-bottom: 1px solid var(--color-border); font-size: 14px; }
+.ea-attempt-row:last-child { border-bottom: none; }
+
+/* Assessment: whole-card selection. A transparent full-size button sits
+   over the card; the card itself shows hover/selected/focus states. */
+[class*="st-key-sel-"] { position: relative; }
+[class*="st-key-sel-"] [data-testid="stMarkdownContainer"]:has(> .ea-select-card) { margin-bottom: 0 !important; }
+[class*="st-key-sel-"] [data-testid="stElementContainer"]:has(.stButton) {
+    position: absolute !important; inset: 0; z-index: 2; width: 100% !important; height: 100% !important;
+}
+[class*="st-key-sel-"] .stButton,
+[class*="st-key-sel-"] .stButton > button { width: 100%; height: 100%; }
+[class*="st-key-sel-"] .stButton > button {
+    opacity: 0; cursor: pointer; border-radius: var(--radius); min-height: 0; transform: none !important;
+}
+.ea-select-card { position: relative; box-sizing: border-box; text-align: center; border-width: 1.5px; cursor: pointer; }
+.st-key-cards-difficulty .ea-select-card { text-align: left; }
+.ea-select-card:hover { transform: none; }
+[class*="st-key-sel-"]:hover .ea-select-card { border-color: var(--color-primary-light); box-shadow: var(--shadow-hover); }
+[class*="st-key-sel-"]:has(button:focus-visible) .ea-select-card { outline: 3px solid var(--color-primary); outline-offset: 2px; }
+.ea-select-card.selected { border-color: var(--color-primary); background: var(--color-accent-bg); }
+.ea-radio {
+    position: absolute; top: 16px; right: 16px; width: 20px; height: 20px; box-sizing: border-box;
+    border: 2px solid #A9A3BD; border-radius: 50%; background: #fff;
+}
+.ea-select-card.selected .ea-radio { border-color: var(--color-primary); background: radial-gradient(circle, var(--color-primary) 0 4.5px, #fff 5.5px); }
+
+/* Panels: the bordered panel's wrapper grows to the column's full height.
+   Covers both the layout wrapper and the element container Streamlit
+   puts around a bordered container. */
+[class*="st-key-panels-"] [data-testid="stColumn"] > div > [data-testid="stLayoutWrapper"]:has([data-testid="stVerticalBlockBorderWrapper"]),
+[class*="st-key-panels-"] [data-testid="stColumn"] > div > [data-testid="stElementContainer"]:has([data-testid="stVerticalBlockBorderWrapper"]) { flex: 1 1 auto; display: flex; flex-direction: column; }
+[class*="st-key-panels-"] [data-testid="stVerticalBlockBorderWrapper"] { flex: 1 1 auto; height: auto; }
+
+/* Sidebar nav labels sit left, next to their icon */
+[data-testid="stSidebar"] .stButton > button,
+[data-testid="stSidebar"] .stButton > button > div { justify-content: flex-start !important; text-align: left !important; }
+[data-testid="stSidebar"] .stButton > button > div { width: 100%; }
+
+/* Primary button: clear disabled state */
+.stButton > button[kind="primary"]:disabled { background: #B9A5F5; border-color: #B9A5F5; color: #fff; opacity: 0.7; }
+
+@media (max-width: 767px) {
+    .st-key-dashboard-goal-card,
+    .st-key-dashboard-score-row .st-key-dashboard-goal-card { height: auto !important; min-height: 0; gap: 16px; }
+    .ea-driver { grid-template-columns: 120px minmax(0, 1fr) 48px; column-gap: 10px; }
+}
+
+/* Score stat tiles: reserve two hint lines so every tile in the row is the
+   same height whether its hint wraps or not. */
+.st-key-cards-score-stats .ea-stat-tile > .ea-small:last-child { min-height: 3em; }
+
+/* =====================================================================
+   v7 panel system - every grouped card is a keyed container
+   st.container(key="panel-*" | "pcard-*" | "pcard-hero-*") inside a row
+   keyed "equal-*". Streamlit 1.64 has no border-wrapper test id any more,
+   so the old per-page rules that targeted one never applied; this replaces
+   them with rules that only depend on the keys we set ourselves.
+   ===================================================================== */
+[class*="st-key-panel-"],
+[class*="st-key-pcard-"] {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: var(--space-3);
+    box-sizing: border-box;
+    gap: 12px;
+}
+[class*="st-key-pcard-hero-"] {
+    background: var(--color-gradient);
+    background-size: 200% 200%;
+    animation: ea-gradient-shift 12s ease-in-out infinite;
+    border-color: transparent;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    color: #fff;
+}
+[class*="st-key-pcard-hero-"] .ea-small,
+[class*="st-key-pcard-hero-"] .ea-section { color: rgba(255, 255, 255, 0.9); }
+[class*="st-key-pcard-hero-"] .ea-section { color: #fff; }
+[class*="st-key-pcard-"] { gap: 16px; }
+[class*="st-key-pcard-"] > *:last-child:not(:first-child) { margin-top: auto; }
+/* a table inside a panel uses the panel's own card, not a second one */
+[class*="st-key-panel-"] .st-key-table-desktop .ea-card { border: none; box-shadow: none; background: transparent; }
+[class*="st-key-panel-"] .st-key-table-desktop .ea-card:hover { transform: none; }
+
+/* Equal rows: columns stretch, and each column's panel wrapper grows to
+   the full column height so all panels in the row share top and bottom. */
+[class*="st-key-equal-"] [data-testid="stHorizontalBlock"] { align-items: stretch; }
+[class*="st-key-equal-"] [data-testid="stColumn"] { align-self: stretch; min-width: 0 !important; }
+[class*="st-key-equal-"] [data-testid="stColumn"] > [data-testid="stVerticalBlock"] { height: 100%; }
+[class*="st-key-equal-"] [data-testid="stColumn"] > [data-testid="stVerticalBlock"] > [data-testid="stLayoutWrapper"]:has(> [class*="st-key-panel-"], > [class*="st-key-pcard-"]) {
+    flex: 1 1 auto;
+    display: flex;
+}
+@media (prefers-reduced-motion: reduce) {
+    [class*="st-key-pcard-hero-"] { animation: none !important; }
+}
+
+.ea-glass-feature {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+/* Landing footer responsive columns */
+@media (max-width: 900px) {
+    .ea-landing-footer > div:first-child {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 28px !important;
+    }
+}
+@media (max-width: 560px) {
+    .ea-landing-footer {
+        padding: 24px 20px 20px 20px !important;
+    }
+    .ea-landing-footer > div:first-child {
+        grid-template-columns: 1fr !important;
+        gap: 22px !important;
+    }
+}
+
+/* Animations & Micro-Interactions */
+@keyframes ea-fade-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ea-slide-right {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.ea-fade-up-card {
+    animation: ea-fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.ea-slide-right-card {
+    animation: ea-slide-right 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.ea-footer-link {
+    transition: all 0.22s ease;
+    display: inline-block;
+}
+.ea-footer-link:hover {
+    color: #FFFFFF !important;
+    text-shadow: 0 0 10px rgba(196, 181, 253, 0.7);
+    transform: translateX(2px);
+}
+
+.ea-social-icon {
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.ea-social-icon:hover {
+    background: #7C3AED !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2px) scale(1.08);
+    box-shadow: 0 6px 16px rgba(124, 58, 237, 0.5) !important;
+}
+
+@media (max-width: 920px) {
+    .ea-landing-footer > div > div:first-child {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 26px !important;
+    }
+}
+@media (max-width: 580px) {
+    .ea-landing-footer > div > div:first-child {
+        grid-template-columns: 1fr !important;
+        gap: 22px !important;
+    }
+}
+
+/* Clean full-width subtle glass footer at true end of page */
+.site-footer {
+    width: 100vw !important;
+    position: relative !important;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    margin-top: 48px !important;
+    margin-bottom: 0 !important;
+    background: rgba(30, 20, 55, 0.28) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 38px 0 20px 0 !important;
+    box-sizing: border-box !important;
+}
+
+div:has(> .site-footer),
+[data-testid="element-container"]:has(.site-footer),
+[data-testid="stMarkdownContainer"]:has(.site-footer) {
+    margin-top: auto !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    width: 100% !important;
+}
+
